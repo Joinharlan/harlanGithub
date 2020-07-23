@@ -1,0 +1,512 @@
+#ifndef	__STRUCT_H__
+#define	__STRUCT_H__
+
+#include	"ProtocolDef.h"
+
+#define	TRANS_LOGON					0		//Ç©µ½
+#define	TRANS_SALE					1		//Ïû·Ñ
+#define	TRANS_VOID					2		//³·Ïú
+#define	TRANS_REFUND				3		//ÍË»õ
+#define	TRANS_QUERY					4		//²éÑ¯
+#define	TRANS_CHANGEPWD				5
+#define	TRANS_LOGOFF				6		//Ç©ÍË
+#define	TRANS_SETT					7		//Åú½áËã
+#define	TRANS_BATCHUP				8		//ÅúÉÏËÍ
+#define	TRANS_BATCHUP1				9		//ÅúÏêÇé(ÍË»õ½»Ò×Ê¹ÓÃ)
+#define	TRANS_BATCHUPEND			10		//ÅúÉÏËÍ½áÊø
+#define	TRANS_BATCHUPEND1			11		//ÅúÉÏËÍ½áÊø
+#define	TRANS_REVERSE				12		//³åÕı
+
+#define	TRANS_AUTH					13		//Ô¤ÊÚÈ¨
+#define	TRANS_AUTH_COMPLETE			14		//Ô¤ÊÚÈ¨Íê³ÉÇëÇó
+#define	TRANS_AUTH_SETTLEMENT		15		//Ô¤ÊÚÈ¨Íê³ÉÍ¨Öª
+#define	TRANS_CANCEL				16		//Ô¤ÊÚÈ¨³·Ïú
+#define	TRANS_COMPLETE_VOID			17		//Ô¤ÊÚÈ¨Íê³É³·Ïú
+#define	TRANS_OFFLINE				18		//ÀëÏß½áËã
+#define	TRANS_ADJUST				19		//ÀëÏßµ÷Õû
+
+#define	TRANS_ECHOTEST				20		//»ØÏì²âÊÔ
+#define	TRANS_MKEYDOWN				21		//Ö÷ÃÜÔ¿ÏÂÔØ
+
+//------------------------------------------------------------------------
+//IC¿¨Ïà¹ØµÄ
+//add for emv
+#define	TRANS_EC_SALE				22		//µç×ÓÏÖ½ğÏû·Ñ(µç×ÓÏÖ½ğÆÕÍ¨Ö§¸¶)
+#define	TRANS_EC_QUEAMT       		28		//µç×ÓÏÖ½ğ²éÓà¶î
+#define	TRANS_EC_QUEMX				29		//Ec²éÃ÷Ï¸
+#define	TRANS_EC_REFUND				30		//IC¿¨µç×ÓÏÖ½ğÍË»õ½»Ò×
+#define	TRANS_QPBOC_CON				23		//·Ç½ÓÏû·Ñ
+#define	TRANS_QPBOC_QUEAMT			27		//·Ç½Ó²éÓà¶î
+#define	TRANS_ICC_OFFSALE				24		//ic¿¨ÀëÏßÏû·Ñ
+#define TRANS_ICC_BATCHUP				25      //¶ÔÕÊÆ½ TC upload
+#define	TRANS_REFUND_VOID   			26		//ÍË»õ³·Ïú
+#define   TRANS_UPLOAD_SCRIPT_RESULT	27		//ÉÏËÍ½Å±¾½á¹û
+
+#define   TRANS_EC_QC					28		//Ö¸¶¨ÕÊ»§ µç×ÓÏÖ½ğÈ¦´æ
+#define   TRANS_NEC_QC					29		//·ÇÖ¸¶¨ÕÊ»§ µç×ÓÏÖ½ğÈ¦´æ
+#define   TRANS_CASH_QC					30		//ÏÖ½ğ³äÖµ
+#define   TRANS_CASH_QC_VOID			31		//ÏÖ½ğ³äÖµ³·Ïú
+
+#define   TRANS_OFF_SALE_BAT   			32		//ÅúÉÏËÍ ÀëÏß½áËã	*/
+#define   TRANS_OFF_ADJUST_BAT			33		//ÅúÉÏËÍ ½áËãµ÷Õû	OFF_ADJUST_BAT*/
+#define   TRANS_OFF_CONFIRM_BAT		    34		//ÅúÉÏËÍ Íê³ÉÀëÏß	*/
+#define   TRANS_ADJUST_TIP_BAT			35		//ÅúÉÏËÍ ½áËãµ÷Õû	ADJUST_TIP_BAT*/
+
+#define   TRANS_DOWNLOAD_EMV_CAPK	36		//IC¿¨¹«Ô¿ÏÂÔØ
+#define   TRANS_DOWNLOAD_EMV_PARAM 	37		//EMV²ÎÊıÏÂÔØ
+#define   TRANS_QUERY_EMV_CAPK 		38		//²éÑ¯IC¿¨¹«Ô¿
+#define   TRANS_QUERY_EMV_PARAM		39		//²éÑ¯IC¿¨²ÎÊı
+#define   TRANS_END_EMV_CAPK		40		//½áÊøIC¿¨¹«Ô¿ÏÂÔØ
+#define   TRANS_END_EMV_PARAM		41		//½áÊøIC¿¨²ÎÊıÏÂÔØ
+
+#define   TRANS_DOWNLOAD_BLACK_LIST	42		//¿¨BINºÚÃûµ¥ÏÂÔØ
+#define   TRANS_END_BLACK_LIST		43		//½áÊø¿¨BINºÚÃûµ¥ÏÂÔØ
+
+#define	TRANS_POSParaTMS			44		//TMS²ÎÊıÏÂÔØ
+#define	TRANS_POSParaInfor			45		//ÖÕ¶Ë²ÎÊıÏÂÔØ
+
+#define   TRANS_ONLINE_DOWNLOAD_MK_CAPK	46		//Áª»úÏÂÔØÖ÷ÃÜÔ¿-ÏÂÔØ¹«Ô¿
+#define   TRANS_ONLINE_DOWNLOAD_MK		47		//Áª»úÏÂÔØÖ÷ÃÜÔ¿
+#define   TRANS_END_ONLINE_DOWNLOAD_MK	48		//Áª»úÏÂÔØÖ÷ÃÜÔ¿Íê³É
+
+#define	TRANS_SALEQUERY             49      //½»Ò×²éÑ¯
+#define	TRANS_SALE_RECE             50      //½»Ò×»ØÖ´
+#define	TRANS_TERM_ACTIVATE         51     //ÖÕ¶Ë¼¤»î
+#define	TRANS_QIAN				    	52		//Ç©ÃûÊı¾İ
+#define   TRANS_SENDPRINT               53          //³É¹¦ÉÏËÍĞ¡Æ±´òÓ¡Êı¾İ
+#define   TRANS_SETTLEDAY               54          //µ±ÈÕ½áËã½»Ò×
+
+
+//µ±ÈÕ½áËãÏµÁĞ
+#define	Open_WorkDailySet           1//¹¤×÷µ±ÈÕ½áËã¿ªÍ¨
+#define	Close_WorkDailySet               2//¹¤×÷µ±ÈÕ½áËã¹Ø±Õ
+#define	Open_HolidaysDailySet           3//½Ú¼Ùµ±ÈÕ½áËã¿ªÍ¨
+#define	Close_HolidaysDailySet               4//½Ú¼Ùµ±ÈÕ½áËã¹Ø±Õ
+#define	Open_HolidaysNextDaySet           5//½Ú¼Ù´ÎÈÕ½áËã¿ªÍ¨
+#define	Close_HolidaysNextDaySet               6//½Ú¼Ù´ÎÈÕ½áËã¹Ø±Õ
+#define   Time_Settlement                           7 //µ±ÈÕ½áËã       
+#define    WorkDailySet_Inquiry                        8//¹¤×÷ÈÕµ±ÈÕ·ÑÂÊ²éÑ¯
+#define   HolidaysDailySet_Inquiry                  9//½Ú¼ÙÈÕ·ÑÂÊµ±ÈÕ½áËã²éÑ¯
+#define   HolidaysNextDaySet_Inquiry            10 //½Ú¼ÙÈÕ´ÎÈÕ½áËã·ÑÂÊ²éÑ¯
+#define   CurrentBusiness_Inquiry                 11 //µ±Ç°ÒµÎñ¿ªÍ¨²éÑ¯
+
+
+#define	OK								0x00
+#define	ERROR							0x01
+
+typedef struct
+{
+	unsigned char Used;						//²Ù×÷Ô±ĞÅÏ¢±êÖ¾
+	unsigned char OperID;					//²Ù×÷Ô±IDºÅ
+	unsigned char IDType;					//²Ù×÷Ô±ÀàĞÍ
+	unsigned char Login;					//Ç©µ½×´Ì¬
+	unsigned char Password[5];				//ÃÜÂë
+}TUser;
+
+typedef struct
+{
+	unsigned char ucCommWaitTime;			//µÈ´ı³¬Ê±¼ä
+	unsigned char ucKeyMode;				//ÃÜÔ¿Ä£Ê½,Ë«ÃÜÔ¿¼°µ¥ÃÜÔ¿
+	unsigned char szCurrCode[3];			//»õ±Ò´úÂë	49Óò	ÈËÃñ±Ò156
+	unsigned char szPosId[9];				//ÖÕ¶ËºÅ
+	unsigned char szUnitNum[16];			//ÉÌ»§ºÅ 42
+	unsigned int lNowBatchNum;				//Åú´ÎºÅ
+	unsigned int lTraceNo;					//Óò11	Á÷Ë®ºÅ
+	unsigned char sTpdu[6];					//TPDU
+}TermPosParm;
+
+//----------------------------------------------------------------------
+//½»Ò×Êı¾İ¸ñÊ½½á¹¹Ìå
+typedef struct _TRANS_8583PACKET_STRC 
+{
+	unsigned char  iTransNo;        			//½»Ò×´úºÅ 
+	unsigned char  szTransCode[7];  			//´¦ÀíÂë 			Óò3
+	unsigned char  action;						//		
+	unsigned char  sSevCode[3];				    //·şÎñµãÌõ¼şÂë   f25
+	unsigned char  sMessCode[3];				//ÏûÏ¢ÀàĞÍÂë     f60.1
+	unsigned char  sNetInfoCode[4]; 			//ÍøÂç¹ÜÀíĞÅÏ¢Âë f60.3
+	unsigned char  sSendMsgId[5];   			//S(4)	ÀàĞÍÂë
+	unsigned char  sRecvMsgId[5];   			//S(4)
+	unsigned char  sBitmapSend[8];				//8583 Packet Bit Map S(8)  
+//	unsigned char  sBitmapRecv[8];
+} TRANS_8583PACKET_STRC;
+
+typedef struct _nTempSTRC 
+{
+	unsigned char  iTransNo;        			//½»Ò×´úºÅ(Ô­½»Ò×)
+	unsigned char  szTransCode[7];  			//´¦ÀíÂë 	Óò3	±äÁ¿´¦ÀíÂë
+	unsigned char  action;			
+	unsigned char  sSevCode[3];				    //·şÎñµãÌõ¼şÂë   f25	//Óò22	·şÎñµãÊäÈë·½Ê½
+	unsigned char  sMessCode[3];				//ÏûÏ¢ÀàĞÍÂë     f60.1
+	unsigned char  sNetInfoCode[4]; 			//ÍøÂç¹ÜÀíĞÅÏ¢Âë f60.3
+	unsigned char  sSendMsgId[5];   			//S(4)   
+	unsigned char  sRecvMsgId[5];   			//S(4)
+	unsigned char  sBitmapSend[8];				//8583 Packet Bit Map S(8)  
+	unsigned char  sBitmapRecv[8];
+	unsigned char  sPacketHead[7]; 
+} nTempSTRC ;
+
+typedef struct  _TrsansStruct
+{
+	unsigned char  iTransNo;        				//½»Ò×´úºÅ(µ±Ç°½»Ò×)
+	unsigned int lAmount;						//Óò4	½»Ò×½ğ¶î
+	unsigned char szTime[7];					//Óò12	ÊÜ¿¨·½ËùÔÚÊ±¼ä
+	unsigned char szDate[5];					//Óò13	ÊÜ¿¨·½ËùÔÚÈÕÆÚ
+	unsigned char szRefNo[13];					//Óò37	¼ìË÷²Î¿¼ºÅ	12
+	unsigned char szSysReferNo[7];				//Óò38	ÊÚÈ¨±êÊ¶Âë	6 Æ¾Ö¤ºÅ
+	unsigned char aResponseData[25];			//Óò44 ·¢¿¨ĞĞ¸½¼ÓÊı¾İ
+	unsigned char AccountType[3];				//Óò54	ÕÊ»§ÀàĞÍ	10´¢ĞîÕÊºÅ 20Ö§Æ±ÕÊºÅ 30ĞÅÓÃ¿¨ÕÊºÅ 90»ı·ÖÕÊºÅ
+	unsigned char sAmountType[3];				//Óò54	Óà¶îÀàĞÍ
+	unsigned char ucAmtSign;					//Óò54	Óà¶î·ûºÅ
+	unsigned int sAmount;						//Óò54	¸½¼Ó½ğ¶î
+
+	unsigned int lOldTraceNo;					//¾É½»Ò×Á÷Ë®ºÅ
+	unsigned int lOldTraceNo1;					//¾É½»Ò×Á÷Ë®ºÅ
+	unsigned int lOldBatchNumber;				//¾ÉÅú´ÎºÅ
+	unsigned char szOldTxnDate[5];				//Ô­½»Ò×ÈÕÆÚ
+	unsigned char szOldTxnTime[7];			//Ô­½»Ò×Ê±¼ä
+	unsigned char szOldRefNo[13];				//Ô­²Î¿¼ºÅ
+	unsigned char TempCUP[3];					//´æ´¢·¢¿¨»ú¹¹(CUPÎªÄÚ¿¨Ïû·Ñ)
+	
+	//add for emv
+	// EMV½»Ò×Êı¾İ
+	unsigned char     szExpDate[5];
+	unsigned char	sIccData[255];
+	unsigned char	iIccDataLen;
+	unsigned char	bPanSeqNoOk;		// ADVT case 43 [3/31/2006 Tommy]
+	unsigned char	ucPanSeqNo;			// App. PAN sequence number
+//	unsigned char	ucICCForceOnlien;
+	unsigned char	sAppCrypto[9];		// app. cryptogram
+	unsigned char	sAuthRspCode[2];
+	unsigned char	TransResult;
+	unsigned char	sTVR[6];
+	unsigned char	szAID[32+1];
+	unsigned char	szAppLable[32+1];
+	unsigned char	szAppPreferName[16+1];
+	unsigned char	sTSI[3];
+	unsigned char	sATC[3];
+	unsigned char	ucFallBack;			/*Ô­½»Ò×ÊÇ·ñFALLBACK  0:²»ÊÇ  1:ÊÇ*/
+	unsigned char	ucSwipeFlag;		// swipe flag
+	unsigned char	EcTrans;			//µç×ÓÏÖ½ğ½»Ò×
+	unsigned char	Ec_Balance[13];
+	unsigned char	szCardUnit[4];		/*¿¨×éÖ¯£ºCUP VIS MAS*/
+
+	unsigned char 	szCDCVM[2];
+	unsigned char	szUNPNUM[5];
+	unsigned char	szTermCap[4];
+	unsigned char	szCVMR[4];
+	unsigned char	szAIP[4+1];
+	unsigned char	szIAD[20+1];
+	//unsigned char	s9f63[16+1];
+
+	
+}TrsansStruct;
+
+typedef struct
+{
+	unsigned char ReversalFlag;				//³åÕı±êÎ»
+	unsigned char ReversalFlag1;				//³åÕı±êÎ»
+	unsigned char	iTransNo;					//½»Ò×ÀàĞÍ,Ö¸µÄÊ²Ã´½»Ò×
+	unsigned char TrackPAN[21];				//Óò2	Ö÷ÕÊºÅ
+	unsigned char CardValid[5];				//Óò14	¿¨ÓĞĞ§ÆÚ
+	unsigned char SettlementDate[5];			//Óò15	ÇåËãÈÕÆÚ	
+	unsigned char szEntryMode[3];				//Óò22	·şÎñµãÊäÈë·½Ê½
+
+	unsigned char szTrack2[40];				//Óò35	´ÅµÀ2Êı¾İ	µÚÒ»¸ö×Ö½ÚÎª³¤¶È
+	unsigned char szTrack3[108];				//Óò36	´ÅµÀ3Êı¾İ	Ç°Á½¸ö×Ö½ÚÊÇ³¤¶È
+	unsigned char szRespCode[3];				//Óò39	Ó¦Ç©Âë
+
+	unsigned char sPIN[13];					//Óò52	¸öÈË±êÊ¶Êı¾İ(pind ata)
+	unsigned char PsamNu[16];
+
+	TrsansStruct	stTrans;
+	nTempSTRC	stTrnTbl;
+
+	unsigned char AccountType;				//ÓÃÓÚÊ¾±êÊ¶Ïû·ÑÀàĞÍ1=t+0¡¢2=t+1¡¢3=t+5¡¢4=t+N¡¢5=t+V   
+	//add for emv card
+	unsigned char  ucFallBack;						//TRUE , FALSE
+	unsigned char  ucSwipedFlag;						//Ë¢¿¨µÄ±êÖ¾
+	unsigned char  bOnlineTxn;						//ICC online falg
+	unsigned char  sScriptDE55[128];
+	int    iScriptDE55Len;
+	unsigned char  sReversalDE55[128];				//³åÕıºÍ½Å±¾Í¨ÖªµÄBIT 55Êı¾İ
+	int    iReversalDE55Len;
+	unsigned char  szCertData[2+20+1];				//type(2)+ID no(20)
+	unsigned char  ucPinEntry;						//TRUE: PIN enter, FALSE: No PIN enter
+	unsigned char szRecvField55Iccdata[300];			//20090218 ÓÃÀ´´æ½ÓÊÕµ½µÄ55ÓòĞÅÏ¢512->300
+	int   iRecvIccdataLen;
+
+	unsigned char sign[2000];   //µç×ÓÇ©ÃûÊı¾İ
+	unsigned char  sField62[512];//512->40
+	int    iField62Len;   //12/05/17
+	#if ProtocolType==36
+        unsigned char settlemode; //ÉÏËÍµÄ½áËã·½Ê½
+    #if 0
+        unsigned char WorkDaysRate[6]; //¹¤×÷µ±ÈÕ·ÑÂÊ
+        unsigned char HolidayRates[6]; //·Ç¹¤×÷ÈÕµ±ÈÕ·ÑÂÊ
+        unsigned char HoliNextDayRates[6]; // ·Ç¹¤×÷ÈÕ´ÎÈÕ·ÑÂÊ
+        unsigned int  Credit; // ¶î¶È
+        unsigned int  SettleAmount; // ½áËã½ğ¶î
+        unsigned char SettleType; //·µ»ØµÄ½áËã·½Ê½
+        unsigned char CurrentOpenType; // µ±Ç°¿ªÍ¨µÄ½áËã·½Ê½
+        unsigned char ErrorMes[40]; // ´íÎóĞÅÏ¢
+  #endif     
+        
+      #endif
+}FieldData;
+
+//ÓÃÓÚ±£´æ½»Ò×¼ÇÂ¼µÄ½á¹¹Ìå
+typedef struct
+{
+	unsigned char TradeType;					//½»Ò×ÀàĞÍ
+	unsigned char ProType;					    //±êÖ¾×´Ì¬(0x01±íÊ¾Ã»ÓĞ±»³·Ïú»òÍË»õ¿î,0x02³·Ïú,0x03ÒÑÉÏËÍ)
+	
+	unsigned int LoglTraceNo;					//Á÷Ë®ºÅ
+	unsigned int LoglAmount;					//½ğ¶î
+	unsigned int LoglNowBatchNum;			    //Åú´ÎºÅ
+	unsigned char LogTempCUP[3];				//¹ú¼ÊĞÅÓÃ¿¨´úÂë
+	unsigned char LogszRefNo[13];				//²Î¿¼ºÅ
+	unsigned char LogszSysReferNo[7];			//ÊÚÈ¨Âë
+	unsigned char LoglTrackPAN[21];			    //Ö÷ÕÊºÅ
+	unsigned char LogCardValid[5];				//¿¨ÓĞĞ§ÆÚ
+	unsigned char LogeaResponseData[25];		//·¢¿¨ĞĞĞÅÏ¢
+	unsigned char Logyear[5];					//Äê·İ
+	unsigned char LogTime[7];					//Óò12	ÊÜ¿¨·½ËùÔÚÊ±¼ä
+	unsigned char LogDate[5];					//Óò13	ÊÜ¿¨·½ËùÔÚÈÕÆÚ	
+	unsigned char  ucSwipedFlag;				//Ë¢¿¨µÄ±êÖ¾
+	unsigned int LogOldlTraceNo;				//Ô­Á÷Ë®ºÅ
+	unsigned int LogOldlTraceNo1;				//Ô­Á÷Ë®ºÅ
+	unsigned char AccountType;				    //ÓÃÓÚÊ¾±êÊ¶Ïû·ÑÀàĞÍ1=t+0¡¢2=t+1¡¢3=t+5¡¢4=t+N¡
+  
+	unsigned char LogucPanSeqNo;
+	unsigned char LogszAID[33];
+	unsigned char LogsAppCrypto[9];
+	unsigned char LogsAuthRspCode[2];
+	unsigned char LogsTVR[6];
+	unsigned char LogsTSI[3];
+	unsigned char LogsATC[3];
+
+
+	//
+	unsigned char LogsAppLable[22+1];
+	unsigned char	szAppPreferName[16+1];//apn
+	unsigned char 	szCDCVM[2];
+	unsigned char	szUNPNUM[5];
+	unsigned char	szTermCap[4];
+	unsigned char	szCVMR[4];
+	unsigned char	szAIP[4+1];
+	unsigned char	szIAD[16+1];
+
+
+
+	
+}LogFile;
+
+//ÓÃÓÚ±£´æ½»Ò×¼ÇÂ¼µÄ½á¹¹Ìå
+typedef struct
+{
+	unsigned char	TradeType;					// 1½»Ò×ÀàĞÍ
+	unsigned char ProType;					// 1±êÖ¾×´Ì¬(0x01±íÊ¾Ã»ÓĞ±»³·Ïú»òÍË»õ¿î,0x02³·Ïú,0x03ÒÑÉÏËÍ)
+	
+	unsigned int LoglTraceNo;					// 4Á÷Ë®ºÅ
+	unsigned int LoglAmount;					// 4½ğ¶î
+	unsigned int LoglNowBatchNum;			// 4Åú´ÎºÅ
+	unsigned char LogTempCUP[3];				// 3¹ú¼ÊĞÅÓÃ¿¨´úÂë
+	unsigned char LogszRefNo[13];				// 13²Î¿¼ºÅ
+	unsigned char LogszSysReferNo[7];			// 7ÊÚÈ¨Âë
+	unsigned char LoglTrackPAN[21];			// 21Ö÷ÕÊºÅ
+	unsigned char LogCardValid[5];				// 5¿¨ÓĞĞ§ÆÚ
+	unsigned char LogeaResponseData[25];		// 25·¢¿¨ĞĞĞÅÏ¢
+	unsigned char Logyear[5];					// 5Äê·İ
+	unsigned char LogTime[7];					// 7Óò12	ÊÜ¿¨·½ËùÔÚÊ±¼ä
+	unsigned char LogDate[5];					// 5Óò13	ÊÜ¿¨·½ËùÔÚÈÕÆÚ	
+	unsigned char  ucSwipedFlag;				//Ë¢¿¨µÄ±êÖ¾
+	unsigned int LogOldlTraceNo;				// 4Ô­Á÷Ë®ºÅ
+	unsigned int LoglOldBatchNumber;			// 4¾ÉÅú´ÎºÅ
+	unsigned char LogOldszRefNo[13];			// 13Ô­²Î¿¼ºÅ
+	unsigned char LogszTrack2[22];				// 22Óò35	´ÅµÀ2Êı¾İ	µÚÒ»¸ö×Ö½ÚÎª³¤¶È
+	unsigned char LogszTrack3[54];				// 54Óò36	´ÅµÀ3Êı¾İ	Ç°Á½¸ö×Ö½ÚÊÇ³¤¶È
+
+	unsigned char LogucPanSeqNo;
+	unsigned char LogszAID[33];
+	unsigned char LogsAppCrypto[9];
+	unsigned char LogsAuthRspCode[2];
+	unsigned char LogsTVR[6];
+	unsigned char LogsTSI[3];
+	unsigned char LogsATC[3];
+}LogFile1;
+
+/*
+typedef struct
+{
+	unsigned int lDebitAmt;						//Ïû·Ñ×Ü±ÊÊı
+	unsigned char VoidTotal;					//³·Ïû×Ü±ÊÊı
+	unsigned char RefundTotal;					//ÍË»õ×Ü±ÊÊı
+	unsigned char VoidRefundTotal;				//³·ÏûÓëÍË»õ×Ü±ÊÊı
+	
+	unsigned char SaleTotallAmount[8];			//Ïû·Ñ×Ü½ğ¶î	
+	unsigned char VoidTotallAmount[8];			//³·Ïû×Ü½ğ¶î	
+	unsigned char RefundTotallAmount[8];			//ÍË»õ×Ü½ğ¶î	
+	unsigned char VoidRefundTotalAmount[8];		//³·ÏûÓëÍË»õ×Ü½ğ¶î
+}
+LOG_STRC;
+*/
+//½è¼Ç:Ïû·Ñ½ğ¶î£¬Ô¤ÊÚÈ¨Íê³ÉÇëÇó½ğ¶î£¬Ô¤ÊÚÈ¨Íê³ÉÍ¨Öª½ğ¶î£¬ÀëÏß½áËã½ğ¶î£¬½áËãµ÷Õû½ğPBOCÏà¹Ø½ğ¶î
+//´û¼Ç:ÍË»õ½ğ¶î£¬Ïû·Ñ³·Ïú½ğ¶î,Ô¤ÊÚÈ¨Íê³É³·Ïú½ğ¶î£¬
+typedef struct _LOG_STRC
+{
+	unsigned int lDebitAmt;				//ÄÚ¿¨½è¼Ç×Ü½ğ¶î
+	unsigned int iDebitNum;				//ÄÚ¿¨½è¼Ç×Ü±ÊÊı		½è·½
+
+	unsigned int lCreditAmt;				//ÄÚ¿¨´û¼Ç×Ü½ğ¶î
+	unsigned int iCreditNum;				//ÄÚ¿¨´û¼Ç×Ü±ÊÊı		´û·½
+	
+//	unsigned int lDebitTotalAmt;			//½è¼Ç×Ü½ğ¶î
+//	unsigned int lDebitTotalNum;			//½è¼Ç×Ü±ÊÊı
+
+	unsigned char ucRmbSettRsp;			//ÄÚ¿¨¶ÔÕÊ½á¹û
+	//-----------------------------------------------------------------------
+	unsigned int lFrnDebitAmt;				//Íâ¿¨½è¼Ç×Ü½ğ¶î		½è·½
+	unsigned int iFrnDebitNum;				//Íâ¿¨½è¼Ç×Ü±ÊÊı	
+	
+	unsigned int lFrnCreditAmt;			//Íâ¿¨´û¼Ç×Ü½ğ¶î		´û·½
+	unsigned int iFrnCreditNum;			//Íâ¿¨´û¼Ç×Ü±ÊÊı
+	
+//	unsigned int lFrnDebitTotalAmt;		//´û¼Ç×Ü½ğ¶î
+//	unsigned int iFrnDebitTotalNum;		//´û¼Ç×Ü±ÊÊı
+
+	unsigned char ucFrnSettRsp;			//Íâ¿¨¶ÔÕÊ½á¹û
+}LOG_STRC;
+
+typedef struct _BATCHUP
+{	
+	unsigned char nTradeNum;				//½»Ò×±ÊÊı
+	unsigned char nUpFlagSale[10];			//Ïû·Ñ¼ÇÂ¼Ë÷Òı
+	unsigned char nUpFlagVOID[10];		//³·Ïú¼ÇÂ¼Ë÷Òı
+	unsigned char nTradeDetail1[20];		//½»Ò×Ã÷Ï¸1
+	unsigned char nTradeDetail2[20];		//½»Ò×Ã÷Ï¸2
+	
+	unsigned char nTradeDetail3[20];		//½»Ò×Ã÷Ï¸3
+	unsigned char nTradeDetail4[20];		//½»Ò×Ã÷Ï¸4
+
+	unsigned char nTradeDetail5[20];		//½»Ò×Ã÷Ï¸5
+	unsigned char nTradeDetail6[20];		//½»Ò×Ã÷Ï¸6
+	
+	unsigned char nTradeDetail7[20];		//½»Ò×Ã÷Ï¸7
+	unsigned char nTradeDetail8[20];		//½»Ò×Ã÷Ï¸8
+}BATCHUP;
+
+typedef struct _JSON_DATA1
+{
+	unsigned char  subMchId[15];    		//ÉÌ»§ºÅ
+	unsigned char  nonceStr[32];  			//Ëæ»ú×Ö·û´®
+	unsigned char  outTradeNo[22]; 		//Íâ²¿ÏµÍ³¶©µ¥ºÅ                
+	unsigned char  merchantId[15];				//Ç©Ãû
+	unsigned char  body[14];	    		//ÉÌÆ·ÃèÊö
+	unsigned char  detail[12];       		//ÉÌÆ·ÏêÇé
+	unsigned char  attach[3];   			//¸½¼ÓÊı¾İ
+	unsigned int   totalFee;   				//×Ü½ğ¶î
+	unsigned char  goodsTag[14];			//ÉÌÆ·±ê¼Ç
+	unsigned char  opUserId[14];			//²Ù×÷Õßid
+	unsigned char  businessSystemId[14];	//Íâ²¿ÏµÍ³id
+	unsigned char  spbillCreateIp[16];		//ÖÕ¶Ë IP
+	unsigned char  authCode[8];			//ÊÚÈ¨Âë	
+	unsigned char  notifyUrl[50];			//ÍøÖ·
+	unsigned char  termNo[8];				//ÖÕ¶ËºÅ
+	unsigned char  codeUrl[50];				//¶şÎ¬Âë
+	unsigned char  resultCode[16];			//Ó¦´ğÂë
+}JSON_DATA1;
+
+
+typedef struct _JSON_DATA2
+{
+	unsigned int  total_fee;    		//Ö§¸¶½ğ¶î
+	unsigned char  product_code[20];  		//¶©µ¥ÒµÎñÀàĞÍ
+	unsigned char  seller_email[50]; 		//Âô¼ÒÖ§¸¶±¦ÕËºÅ                
+	unsigned char  _input_charset[6];				
+	unsigned char  body[14];	    		//ÉÌÆ·ÃèÊö
+	unsigned char  service[25];       		
+	unsigned char  out_trade_no[22];   	//¶©µ¥ºÅ
+	unsigned char  termNo[8];   			//ÖÕ¶ËºÅ	
+	unsigned char  operator_id[14];		//Âô¼ÒµÄ²Ù×÷Õßid	 ²Ù×÷Ô±ºÅ
+	unsigned char  subject[14];				//¶©µ¥±êÌâ
+	unsigned char  partner[20];				//ºÏ×÷»ï°é
+	unsigned char  notify_url[60];			//·şÎñÆ÷Òì²½Í¨ÖªÒ³ÃæÂ·¾¶
+	unsigned char  merchantId[15];			//ÉÌ»§ºÅ	
+	unsigned char  result_code[7];			//·µ»ØÓ¦´ğÂë
+	unsigned char  qr_code[50];				//¶şÎ¬Âë
+	unsigned char  trade_status[14];		//²éÑ¯·µ»ØÓ¦´ğÂë
+}JSON_DATA2;
+
+typedef struct _WECHATPAY
+{
+	unsigned char  txcode[7];    	    //½»Ò×Âë
+	unsigned char  txdate[9];  			//½»Ò×ÈÕÆÚ YYYYMMDD
+	unsigned char  txtime[7]; 		    //½»Ò×Ê±¼ä HHMMSS                 
+	unsigned char  version[9];			//°æ±¾ºÅ
+	unsigned char  contextlen[7];	    //±¨ÎÄ³¤¶È
+	JSON_DATA1     Jsondata;           //±¨ÎÄÊı¾İJSON??
+	JSON_DATA2 	   Jsondata2;
+	unsigned char  context[512];
+	unsigned char  returncode[30];   	//Ó¦´ğÂë
+	unsigned char  retmsglen[7];   	//Ó¦´ğĞÅÏ¢³¤¶È
+	unsigned char  returnmsg[100];		//Ó¦´ğĞÅÏ¢
+	unsigned char  tradeState[7];		//½»Ò××´Ì¬
+}WECHATPAY;
+
+#if ProtocolType ==26
+typedef struct _TRANS_TRAND_QUERY
+{
+    unsigned char nModen; 				    //²Ù×÷µÄÀàĞÍ
+	unsigned char szOldTxnTime[9];			//Ô­½»Ò×Ê±¼ä
+	unsigned char LogOldTxnTime[5];       //Ô­½»Ò×ÈÕÆÚ
+	unsigned char szOldRefNo[13];			//Ô­²Î¿¼ºÅ
+	unsigned int LogOldlTraceNo;		   // 4Ô­Á÷Ë®ºÅ
+	unsigned int LoglOldBatchNumber;		// 4¾ÉÅú´ÎºÅ
+}T_TRAND_QUERY;	
+#endif
+
+
+typedef struct _File_Parm
+{				 
+	unsigned char FileName[32];	//ÎÄ¼şÃû
+	unsigned int FileAddr;		//ÎÄ¼ş´æ·ÅµØÖ·
+	unsigned int FileLen;		//ÎÄ¼ş´óĞ¡
+	unsigned int BlockSize;		//¿é´óĞ¡
+	unsigned int BlockSum;		//¿é¸öÊı
+	unsigned int FileCrc32;		//ÎÄ¼şCRC32Ğ£ÑéÖµ
+	unsigned int TargetAddr;	//Ä¿±êµØÖ·	
+}File_Parm;
+
+typedef struct 
+{
+	unsigned char sProType;				//±êÖ¾×´Ì¬ (0x00±íÊ¾Ã»ÓĞÉÏËÍ³É¹¦ 0x01±íÊ¾ÉÏËÍ³É¹¦)													//±íÊ¾Ã»ÓĞ
+	unsigned char sTradeType;			//Ô­½»Ò×ÀàĞÍ
+	unsigned char sTradeNo;				//½»Ò×±àºÅ
+	unsigned char sOperNo;				//²Ù×÷Ô±ºÅ
+	unsigned int  slOldBatchNumber;		//60.1Ô­½»Ò×Åú´ÎºÅ
+	unsigned int  slOldTraceNo;			//60.2Ô­½»Ò×Á÷Ë®ºÅ
+	unsigned char sTrackPAN[21];			//Óò2	Ö÷ÕÊºÅ
+	unsigned int sTradeAmot;			//½ğ¶î		
+	unsigned char ucSwipedFlag;			//²å¿¨·½Ê½
+	unsigned char syear[5];				//Äê·İ
+	unsigned char sTime[7];				//Óò12	ÊÜ¿¨·½ËùÔÚÊ±¼ä
+	unsigned char sDate[5];				//Óò13	ÊÜ¿¨·½ËùÔÚÈÕÆÚ		
+	unsigned char sCardValid[5];			//Óò14	¿¨ÓĞĞ§ÆÚ
+	unsigned char szRefNo[13];			//²Î¿¼ºÅ
+	unsigned char szSysReferNo[7];		//ÊÚÈ¨Âë
+	//unsigned char ResponseData[26];
+	unsigned char szAID[33];
+	//unsigned char  sIccData[255];		//Óò55
+	
+	unsigned short	signlen;				//Ç©Ãû³¤¶È
+	unsigned char  signDate[900];			//900µç×ÓÇ©ÃûÊı¾İ
+
+}ELECTRSIGNDATA;
+
+#endif
+
+TRSIGNDATA;
+
+#endif
+

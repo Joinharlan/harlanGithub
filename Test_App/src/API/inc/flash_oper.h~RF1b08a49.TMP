@@ -1,0 +1,1129 @@
+/**************************************
+*   flash memoy message start address
+**************************************/
+#ifndef  _FLASH_OPER_H_
+#define  _FLASH_OPER_H_
+
+//#include "stm32f10x.h"
+
+//#include	"DriverDef.h"
+
+#define	KEY_MODE_DES		0
+#define	KEY_DOUBLE_DES		1
+
+#define	PIN_KEY_ID			1
+#define	DOUBLE_PIN_KEY_ID	2
+
+#define	MAC_KEY_ID			3
+#define	DOUBLE_MAC_KEY_ID	4
+
+#define	DATA_KEY_ID			5
+#define	DOUBLE_DATA_KEY_ID	6
+
+#define	KEY_MAC_Mode0			0x00
+#define	KEY_MAC_Mode1			0x01
+#define	KEY_MAC_Mode2			0x02
+#define	KEY_MAC_Mode3			0x03
+
+//******************************************************
+//一些部件数据体长度
+#define	ResetFlagValue			96
+
+//******************************************************
+//一些部件数目
+
+//*****************************************************************************
+//flash存储空间地址分布
+//-------------------------------------------------------------
+//一.本机一些设置项目及存储项目
+#define	InitStat					0x0000
+#define	InitStatEnd					InitStat+2							//本页初始化状态
+
+#define	Key_Tone_Flag				InitStatEnd							//按键音开关			    2 Byte
+#define	Key_Tone_FlagEnd			Key_Tone_Flag+2
+
+#define	contrast_value    			Key_Tone_FlagEnd					//对比度调节			    2 Byte
+#define	contrast_valueEnd			contrast_value+2
+
+#define	PrintSwitch          		contrast_valueEnd     				//打印开关				2 Byte
+#define	PrintSwitchEnd				PrintSwitch+2
+
+#define	PrintPagAdd          		PrintSwitchEnd	     				//打印页数				2 Byte
+#define	PrintPagAddEnd				PrintPagAdd+2
+
+#define	SystemIMEI					PrintPagAddEnd						//模块IMEI号			    20Byte
+#define	SystemIMEIEnd				SystemIMEI+20
+
+#define	SystemICCID					SystemIMEIEnd						//SIM卡CCID号			22Byte
+#define	SystemICCIDEnd				SystemICCID+22
+//-------------------------------------------------------------
+#define	InsertMode					SystemICCIDEnd						//接入模式
+#define	InsertModeEnd				InsertMode+2
+
+#define	InsertAdd					InsertModeEnd						//接入点地址
+#define	InsertAddEnd				InsertAdd+30
+
+#define	ServerIPNum   				InsertAddEnd						//IP地址1				20Byte
+#define	ServerIPNumEnd				ServerIPNum+20
+
+#define	ServerIPNumPort				ServerIPNumEnd						//端口号1				10Byte
+#define	ServerIPNumPortEnd			ServerIPNumPort+10
+
+#define	ServerIPNum1   				ServerIPNumPortEnd					//IP地址2				20Byte
+#define	ServerIPNum1End				ServerIPNum1+20
+
+#define	ServerIPNum1Port			ServerIPNum1End						//端口号2				10Byte
+#define	ServerIPNum1PortEnd			ServerIPNum1Port+10
+
+#define	NetAPN						ServerIPNum1PortEnd					//网络APN				30Byte
+#define	NetAPNEnd					NetAPN+30
+
+#define	NetUserName					NetAPNEnd							//网络用户名			    30Byte
+#define	NetUserNameEnd				NetUserName+30
+
+#define	NetPassWord					NetUserNameEnd						//网络密码				30Byte
+#define	NetPassWordEnd				NetPassWord+30
+
+#define	DataTimerAddress1			NetPassWordEnd
+#define	DataTimerAddressEnd1		DataTimerAddress1+10
+//---------------------------------------------------------------------------------------
+#define	WaitTime					DataTimerAddressEnd1				//等待时间
+#define	WaitTimeEnd					WaitTime+2
+
+#define	KeyMode						WaitTimeEnd							//密钥模式
+#define	KeyModeEnd					KeyMode+2
+
+#define	CurrCode					KeyModeEnd							//国家代码
+#define	CurrCodeEnd					CurrCode+4
+
+#define	PosId						CurrCodeEnd							//终端号
+#define	PosIdEnd					PosId+8
+
+#define	UnitNum						PosIdEnd							//商户号
+#define	UnitNumEnd					UnitNum+16
+
+#define	BatchNum					UnitNumEnd							//批次号
+#define	BatchNumEnd					BatchNum+4
+
+#define	UnitChina					BatchNumEnd							//商户中文名称 40(第一个字节为长度)
+#define	UnitChinaEnd				UnitChina+42
+
+#define	UnitEnglish					UnitChinaEnd						//商户英文名称 20
+#define	UnitEnglishEnd				UnitEnglish+22
+
+#define	SubAppName					UnitEnglishEnd						//子应用名称
+#define	SubAppNameEnd				SubAppName+18
+
+#define	TPDU2Name					SubAppNameEnd
+#define	TPDU2NameEnd				TPDU2Name+10						//TPDU2参数(固定长度)
+
+#define	PrintTitle					TPDU2NameEnd
+#define	PrintTitleEnd				PrintTitle+42						//打印抬头
+
+#define    SalePhone                PrintTitleEnd +32                   // 业务员电话号码
+
+#define    DisModeView              SalePhone +32                       // 待机界面顶部显示文字
+#if ProtocolType == 11
+#define    WeiXinS                   DisModeView +20                     
+#define    ZhiFuBaoS                 WeiXinS +20                     
+#endif
+#define	DownLoad_Flag				ZhiFuBaoS								
+#define	DownLoad_FlagEnd			DownLoad_Flag+2
+//-------------------------------------------------------------
+//二.应用部分一些参数项
+#define	ReState						0x1000								//本扇区初始化标志
+#define	ReStateEnd					ReState+2
+
+#define	TraceNo	         			ReStateEnd			   				//交易流水号
+#define	TraceNoEnd					TraceNo+4
+
+#define   Trackkey						TraceNoEnd
+#define   TrackkeyEnd					Trackkey+20						//磁道密钥密文
+
+#define   MenuNumber					TrackkeyEnd
+#define   MenuNumberEnd               		MenuNumber+5					//菜单版本号
+
+#define  MenuDate						MenuNumberEnd
+#define   MenuDateEnd					MenuDate+500					//菜单数据
+
+#define   MenuLog						MenuDateEnd
+#define   MenuLogEnd					MenuLog+3						//动态菜单标志
+
+#define   Transmissionkey				MenuLogEnd
+#define   TransmissionkeyEnd					Transmissionkey+50					//传输密钥
+//-------------------------------------------------------------
+//三.签到相关数据
+#define	OperInforTabCount			100									//24组操作员信息
+#define	OperInforTabLen				8
+
+#define	OperInitState				0x2000								//系统管理员与主管初始化状态
+#define	OperInitStateEnd			OperInitState+2
+
+#define	OperLoginState				OperInitStateEnd					//操作员签到状态
+#define	OperLoginStateEnd			OperLoginState+2
+
+#define	POSLonginState				OperLoginStateEnd
+#define	POSLonginStateEnd			POSLonginState+2					//POS签到状态
+
+#define	POSLockState				POSLonginStateEnd
+#define	POSLockStateEnd				POSLockState+2						//POS锁定状态
+
+#define	OperInforTab				POSLockStateEnd						//操作员信息区
+#define	OperInforTabEnd				OperInforTab+(OperInforTabCount*OperInforTabLen)
+
+//-------------------------------------------------------------
+//四.交易开关信息
+#define	TradeSwitchState			0x3000
+#define	TradeSwitchStateEnd			TradeSwitchState+2
+//----------------------
+//传统类
+#define	ConsumeSwitch				TradeSwitchStateEnd					//消费交易开关
+#define	ConsumeSwitchEnd			ConsumeSwitch+2
+
+#define	ConsumeCancelSwitch			ConsumeSwitchEnd					//消费撤销交易开关
+#define	ConsumeCancelSwitchEnd		ConsumeCancelSwitch+2
+
+#define	RefundSwitch				ConsumeCancelSwitchEnd				//退货
+#define	RefundSwitchEnd				RefundSwitch+2
+
+#define	BalanceSwitch				RefundSwitchEnd						//余额查询
+#define	BalanceSwitchEnd			BalanceSwitch+2
+
+#define	YuAuthorSwitch				BalanceSwitchEnd					//预授权
+#define	YuAuthorSwitchEnd			YuAuthorSwitch+2
+
+#define	YuAuthorCancelSwitch		YuAuthorSwitchEnd					//预授权撤销
+#define	YuAuthorCancelSwitchEnd		YuAuthorCancelSwitch+2
+
+#define	YuAuthorOkSwitch			YuAuthorCancelSwitchEnd				//预授权完成请求
+#define	YuAuthorOkSwitchEnd			YuAuthorOkSwitch+2
+
+#define	YuAuthornoticeSwitch		YuAuthorOkSwitchEnd					//预授权完成通知
+#define	YuAuthornoticeSwitchEnd		YuAuthornoticeSwitch+2
+
+#define	YuAuthorOkCanelSwitch		YuAuthornoticeSwitchEnd				//预授权完成完成撤消
+#define	YuAuthorOkCanelSwitchEnd	YuAuthorOkCanelSwitch+2
+
+#define	OffLineJieShuan				YuAuthorOkCanelSwitchEnd			//离线结算
+#define	OffLineJieShuanEnd			OffLineJieShuan+2
+
+#define	JieShuanAdjust				OffLineJieShuanEnd					//结算调整
+#define	JieShuanAdjustEnd			JieShuanAdjust+2
+
+//----------------------
+//电子现金类
+#define	CashContact					JieShuanAdjustEnd					//接触
+#define	CashContactEnd				CashContact+2
+
+#define	CashNContact				CashContactEnd						//非接
+#define	CashNContactEnd				CashNContact+2
+
+#define	CashEarmark					CashNContactEnd						//指定帐号圈存
+#define	CashEarmarkEnd				CashEarmark+2
+
+#define	CashNEarmark				CashEarmarkEnd						//非指定帐号圈存
+#define	CashNEarmarkEnd				CashNEarmark+2
+
+#define	CashChange					CashNEarmarkEnd						//电子现金充值
+#define	CashChangeEnd				CashChange+2
+
+#define	CashChangeCancel			CashChangeEnd						//电子充值撤销
+#define	CashChangeCancelEnd			CashChangeCancel+2
+
+#define	CashRefund					CashChangeCancelEnd					//电子现金脱机退货
+#define	CashRefundEnd				CashRefund+2
+
+//---------------------
+//电子钱包类
+#define	EWalletSale					CashRefundEnd						//电子钱包消费
+#define	EWalletSaleEnd				EWalletSale+2
+
+#define	EWalletQuanCun				EWalletSaleEnd						//电子钱包指定帐号圈存
+#define	EWalletQuanCunEnd			EWalletQuanCun+2
+
+#define	EWalletNQuanCun				EWalletQuanCunEnd					//电子钱包非指定帐号圈存
+#define	EWalletNQuanCunEnd			EWalletNQuanCun+2
+
+#define	EwalletCashChange			EWalletNQuanCunEnd					//电子钱包现金充值	
+#define	EwalletCashChangeEnd		EwalletCashChange+2
+
+//---------------------
+//分期付款类
+#define	FeiQiPaySale				EwalletCashChangeEnd				//分期付款消费
+#define	FeiQiPaySaleEnd				FeiQiPaySale+2
+
+#define	FeiQiPaySaleCancel			FeiQiPaySaleEnd						//分期付款消费撤销
+#define	FeiQiPaySaleCancelEnd		FeiQiPaySaleCancel+2
+
+//---------------------
+//积分类
+#define	UnionScoreSale				FeiQiPaySaleCancelEnd				//联盟积分消费
+#define	UnionScoreSaleEnd			UnionScoreSale+2
+
+#define	IssuingScoreSale			UnionScoreSaleEnd					//发卡行积分消费
+#define	IssuingScoreSaleEnd			IssuingScoreSale+2
+
+#define	UnionScoreSaleCancel		IssuingScoreSaleEnd					//联盟积分消费撤销
+#define	UnionScoreSaleCancelEnd		UnionScoreSaleCancel+2
+
+#define	IssuingScoreSaleCancel		UnionScoreSaleCancelEnd				//发卡行积分消费撤销
+#define	IssuingScoreSaleCancelEnd	IssuingScoreSaleCancel+2
+
+#define	UnionScoreQuery				IssuingScoreSaleCancelEnd			//联盟积分查询
+#define	UnionScoreQueryEnd			UnionScoreQuery+2
+
+#define	UnionScoreRefund			UnionScoreQueryEnd					//联盟积分退货
+#define	UnionScoreRefundEnd			UnionScoreRefund+2
+
+//---------------------
+//手机芯片类
+#define	PhoneSale					UnionScoreRefundEnd					//手机消费
+#define	PhoneSaleEnd				PhoneSale+2
+
+#define	PhoneSaleCancel				PhoneSaleEnd						//手机消费撤销
+#define	PhoneSaleCancelEnd			PhoneSaleCancel+2
+
+#define	PhoneRefund					PhoneSaleCancelEnd					//手机退货
+#define	PhoneRefundEnd				PhoneRefund+2
+
+#define	PhoneYSQ					PhoneRefundEnd						//手机预授权
+#define	PhoneYSQEnd					PhoneYSQ+2
+
+#define	PhoneYSQCancel				PhoneYSQEnd							//手机预授权撤销
+#define	PhoneYSQCancelEnd			PhoneYSQCancel+2
+
+#define	PhoneYSQOkRequest			PhoneYSQCancelEnd					//手机预授权完成请求
+#define	PhoneYSQOkRequestEnd		PhoneYSQOkRequest+2
+
+#define	PhoneYSQOkNotice			PhoneYSQOkRequestEnd				//手机预授权完成通知
+#define	PhoneYSQOkNoticeEnd			PhoneYSQOkNotice+2
+
+#define	PhoneYSQOkCancel			PhoneYSQOkNoticeEnd					//手机预授权完成撤销
+#define	PhoneYSQOkCancelEnd			PhoneYSQOkCancel+2
+
+#define	PhoneBlanceQuery			PhoneYSQOkCancelEnd					//手机余额查询
+#define	PhoneBlanceQueryEnd			PhoneBlanceQuery+2
+
+//---------------------
+//预约类
+#define	SubscribeSale				PhoneBlanceQueryEnd					//预约消费
+#define	SubscribSaleEnd				SubscribeSale+2
+
+#define	SubscribSaleCancel			SubscribSaleEnd						//预约消费撤销
+#define	SubscribSaleCancelEnd		SubscribSaleCancel+2
+
+//---------------------
+//定购类
+#define	OrderSale					SubscribSaleCancelEnd				//定购消费
+#define	OrderSaleEnd				OrderSale+2
+
+#define	OrderSaleCancel				OrderSaleEnd						//定购消费撤销
+#define	OrderSaleCancelEnd			OrderSaleCancel+2
+
+#define	OrderRefund					OrderSaleCancelEnd					//定购退货
+#define	OrderRefundEnd				OrderRefund+2
+
+#define	OrderYSQ					OrderRefundEnd						//定购预授权
+#define	OrderYSQEnd					OrderYSQ+2
+
+#define	OrderYSQCancel				OrderYSQEnd							//定购预授权撤销
+#define	OrderYSQCancelEnd			OrderYSQCancel+2
+
+#define	OrderYSQOkRequest			OrderYSQCancelEnd					//定购预授权完成请求
+#define	OrderYSQOkRequestEnd		OrderYSQOkRequest+2
+
+#define	OrderYSQOkNotice			OrderYSQOkRequestEnd				//定购预授权完成通知
+#define	OrderYSQOkNoticeEnd			OrderYSQOkNotice+2
+
+#define	OrderYSQOkCancel			OrderYSQOkNoticeEnd					//定购预授权完成撤销
+#define	OrderYSQOkCancelEnd			OrderYSQOkCancel+2
+
+//---------------------
+//其他类
+#define	MagneticCashChang			OrderYSQOkCancelEnd					//磁条现金充值
+#define	MagneticCashChangEnd		MagneticCashChang+2
+
+#define	MagneticaCcountChang		MagneticCashChangEnd				//磁条帐号充值
+#define	MagneticaCcountChangEnd	MagneticaCcountChang+2
+
+//--------------------
+//交易输密控制开关
+#define	SaleCancelPword				MagneticaCcountChangEnd				//消费撤销是否输密
+#define	SaleCancelPwordEnd			SaleCancelPword+2
+
+#define	YSQCancelPword				SaleCancelPwordEnd					//预授权撤销是否输密
+#define	YSQCancelPwordEnd			YSQCancelPword+2
+
+#define	YSQOkCancelPword			YSQCancelPwordEnd					//预授权完成撤销是否输密
+#define	YSQOkCancelPwordEnd			YSQOkCancelPword+2
+
+#define	YSQOkRequestPword			YSQOkCancelPwordEnd					//预授权完成请求是否输密
+#define	YSQOkRequestPwordEnd		YSQOkRequestPword+2
+
+//--------------------
+//交易控制开关
+#define	SaleCancelBrush				YSQOkRequestPwordEnd				//消费撤销是否刷卡
+#define	SaleCancelBrushEnd			SaleCancelBrush+2
+
+#define	YSQOKBrush					SaleCancelBrushEnd					//预授权完成是否刷卡
+#define	YSQOKBrushEnd				YSQOKBrush+2
+
+//--------------------
+//结算交易控制
+#define	JieShuanLogoff				YSQOKBrushEnd						//结算是否自动签退
+#define	JieShuanLogoffEnd			JieShuanLogoff+2
+
+#define	JieShuanPrintDetail			JieShuanLogoffEnd					//结算是否打印明细
+#define	JieShuanPrintDetailEnd		JieShuanPrintDetail+2
+
+//--------------------
+//离线交易控制
+#define	OffLineUpMode				JieShuanPrintDetailEnd				//离线上送方式
+#define	OffLineUpModeEnd			OffLineUpMode+2
+
+#define	OffLineUpCnt				OffLineUpModeEnd					//离线上送次数
+#define	OffLineUpCntEnd				OffLineUpCnt+2
+
+#define	AutoUpCnt					OffLineUpCntEnd						//自动上送累计笔数 默认3笔
+#define	AutoUpCntEnd				AutoUpCnt+2
+
+//--------------------
+//其它交易控制
+#define	ZMangPword					AutoUpCntEnd						//主管密码输入
+#define	ZMangPwordEnd				ZMangPword+2
+
+#define	HandInPutCard				ZMangPwordEnd						//手输卡号
+#define	HandInPutCardEnd			HandInPutCard+2
+
+#define	MoRenBrushTrade				HandInPutCardEnd					//默认刷卡交易
+#define	MoRenBrushTradeEnd			MoRenBrushTrade+2
+
+#define	PBOCDemotion				MoRenBrushTradeEnd					//PBOC降级处理
+#define	PBOCDemotionEnd				PBOCDemotion+2
+
+#define	LimitBlance					PBOCDemotionEnd						//退货最大限额
+#define	LimitBlanceEnd				LimitBlance+4
+
+//--------------------
+//系统参数设置
+#define	PrintSDChina				LimitBlanceEnd						//是否打印收单行中文
+#define	PrintSDChinaEnd				PrintSDChina+2
+
+#define	PrintFKChina				PrintSDChinaEnd					    //是否打印发卡行中文
+#define	PrintFKChinaEnd				PrintFKChina+2
+
+#define	PrintPageCtl				PrintFKChinaEnd					    //打印页数控制
+#define	PrintPageCtlEnd				PrintPageCtl+2
+
+#define	PrintDegree					PrintPageCtlEnd						//打印浓度
+#define	PrintDegreeEnd				PrintDegree+2
+
+#define	SalesSlipPrintEnglish			PrintDegreeEnd					//签购单是否打印英文
+#define	SalesSlipPrintEnglishEnd		SalesSlipPrintEnglish+2
+
+#define	ReSendCnt					SalesSlipPrintEnglishEnd			//重发次数设置
+#define	ReSendCntEnd				ReSendCnt+2
+
+#define	RecvTimeOutReverse			ReSendCntEnd						//接收超时立刻冲正
+#define	RecvTimeOutReverseEnd		RecvTimeOutReverse+2
+
+#define	MaxTradeCnt				    RecvTimeOutReverseEnd				//最大交易笔数
+#define	MaxTradeCntEnd				MaxTradeCnt+2
+
+#define	PasswordMOde				MaxTradeCntEnd						//键盘内外置设置
+#define	PasswordMOdeEnd			    PasswordMOde+2
+
+#define	NContactMode				PasswordMOdeEnd						//非接内外置设置
+#define	NContactModeEnd			    NContactMode+2
+
+#define	TipScale					NContactModeEnd						//小费比例设置
+#define	TipScaleEnd					TipScale+2
+
+#define	TradeCancelMinus			TipScaleEnd							//撤销交易打印负号
+#define	TradeCancelMinusEnd		    TradeCancelMinus+2
+
+#define	BlacklistDownLoad			TradeCancelMinusEnd					//强制下载黑名单
+#define	BlacklistDownLoadEnd		BlacklistDownLoad+2
+
+
+#define 	INITSTART						BlacklistDownLoadEnd	//
+#define 	INITSTARTAEnd					INITSTART+1
+
+
+#define 	QBINListA						INITSTARTAEnd	//BIN表A
+#define 	QBINListAEnd					QBINListA+2
+
+#define 	QBINListB						QBINListAEnd		//BIN表B
+#define 	QBINListBEnd					QBINListB+2
+
+#define	FreePswAmount				QBINListBEnd
+#define	FreePswAmountEnd				FreePswAmount+14	//免密限额
+
+#define	FreeSignAmount				FreePswAmountEnd
+#define	FreeSignAmountEnd				FreeSignAmount+14	//免签限额
+
+#define	CDCVMSwitch					FreeSignAmountEnd	//CDCVM判断开关
+#define	CDCVMSwitchEnd				CDCVMSwitch+2
+
+#define	FreeSignFlag					CDCVMSwitchEnd
+#define	FreeSignFlagEnd				FreeSignFlag+2	//免签标志
+
+#define	FreePswFlag					FreeSignFlagEnd
+#define	FreePswFlagEnd				FreePswFlag+2	//免密标志
+
+#define	PrintTipLogo					FreePswFlagEnd	//小票Logo
+#define	PrintTipLogoEnd				PrintTipLogo+2
+
+
+//-------------------------------------------------------------
+//五.冲正相关数据
+#define	ReverseInitAddr				0x4000
+#define	ReverseInitAddrEnd			ReverseInitAddr+2
+
+#define	ReverseAddr				ReverseInitAddrEnd
+#define	ReverseAddrEnd				ReverseAddr+0x400-2
+
+#define	ReverseAddr2				ReverseAddrEnd
+#define	ReverseAddr2End			ReverseAddr2+0x400
+
+#define	ReverseAddr3				ReverseAddr2End
+#define	ReverseAddr3End			ReverseAddr3+0x400
+
+#define	ReverseAddr4				ReverseAddr3End
+#define	ReverseAddr4End			ReverseAddr4+0x400
+
+//-------------------------------------------------------------
+//六.暂时保存当前交易数据
+#define	SaveTradeAddr				0x5000
+#define	SaveTradeAddrEnd			SaveTradeAddr+0x1000
+
+//-------------------------------------------------------------
+//七保存最后一笔交易数据
+#define	EndPrintInforInitAdd			0x6000
+#define	EndPrintInforInitAddEnd		EndPrintInforInitAdd+2
+
+#define	EndPrintInfor				EndPrintInforInitAddEnd					//打印最后一笔第一页
+#define	EndPrintInforEnd			EndPrintInfor+0x800-2
+
+#define	EndPrintInfor1				EndPrintInforEnd						//打印最后一笔第二页
+#define	EndPrintInfor1End			EndPrintInfor1+0x800
+
+//-------------------------------------------------------------
+//八外部认证密钥
+#define	WneipassKeyInitAdd			0x7000
+#define	WneipassKeyInitAddEnd		WneipassKeyInitAdd+2
+
+#define	WneipassKey				WneipassKeyInitAddEnd
+#define	WneipassKeyEnd				WneipassKey+16
+
+//最后一笔交易流水			
+#define	LASTPRINTInforInit_Add		0x8000
+#define	LASTPRINTInforInitAddEnd	LASTPRINTInforInit_Add+2
+
+#define	LASTPRINTInfor				LASTPRINTInforInitAddEnd					//打印最后一笔第一页
+#define	LASTPRINTInforEnd			LASTPRINTInfor+0x800-2
+
+//-------------------------------------------------------------
+//IC功能相关参数
+#define	ICCardParamPageInitAdd		0xa000
+#define	ICCardParamPageInitAddEnd	ICCardParamPageInitAdd+2
+
+#define	ICCardParamPage			ICCardParamPageInitAddEnd
+#define	ICCardParamPageEnd		ICCardParamPage+0x1000-2
+
+//-------------------------------------------------------------
+//IC功能相关参数1
+#define	ICCardParamPage1InitAdd	0xb000
+#define	ICCardParamPage1InitAddEnd	ICCardParamPage1InitAdd+2
+
+#define	ICCardParamPage1			ICCardParamPage1InitAddEnd
+#define	ICCardParamPage1End		ICCardParamPage1+0x1000-2
+
+#define	FreePswCardbin	0xc000	//BIN B
+#define	FreeBlackNameList	0xe000	//黑名单BIN C
+
+
+/*
+#if	SysSlecte	==	1
+//-------------------------------------------------------------
+//五.冲正相关数据
+#define	ReverseInitAddr1			0xc000
+#define	ReverseInitAddr1End			ReverseInitAddr1+2
+
+#define	ReverseAddr11				ReverseInitAddr1End
+#define	ReverseAddr11End			ReverseAddr11+0x400-2
+
+#define	ReverseAddr12				ReverseAddr11End
+#define	ReverseAddr12End			ReverseAddr12+0x400
+
+#define	ReverseAddr13				ReverseAddr12End
+#define	ReverseAddr13End			ReverseAddr13+0x400
+
+#define	ReverseAddr14				ReverseAddr13End
+#define	ReverseAddr14End			ReverseAddr14+0x400
+//-------------------------------------------------------------
+//七保存最后一笔交易数据(双应用)
+#define	EndPrintInforInitAdd1		0xD000
+#define	EndPrintInforInitAdd1End	EndPrintInforInitAdd1+2
+
+#define	EndPrintInfor11				EndPrintInforInitAdd1End						//打印最后一笔第一页
+#define	EndPrintInfor11End			EndPrintInfor11+0x800-2
+
+#define	EndPrintInfor12				EndPrintInfor11End								//打印最后一笔第二页
+#define	EndPrintInfor12End			EndPrintInfor12+0x800
+//-------------------------------------------------------------
+//二.应用部分一些参数项(双应用记录)
+#define	InitSystemSelect1			0xE000										    //本扇区初始化标志
+#define	InitSystemSelect1End		InitSystemSelect1+2
+
+#define	TraceNo1         				InitSystemSelect1End			   			//交易流水号
+#define	TraceNo1End				TraceNo1+4
+
+//-------------------------------------------------------------
+//双应用记录
+#define	InitSystemSelect				0xF000
+#define	InitSystemSelectEnd			InitSystemSelect+2
+
+#define	PosId1						InitSystemSelectEnd							    //终端号
+#define	PosId1End					PosId1+8
+
+#define	UnitNum1					PosId1End									    //商户号
+#define	UnitNum1End				UnitNum1+16
+
+#define	UnitChina1					UnitNum1End									    //商户名称
+#define	UnitChina1End				UnitChina1+42
+
+#define	BatchNum1					UnitChina1End									//批次号
+#define	BatchNum1End				BatchNum1+4
+#endif
+*/
+
+//二维码交易
+#define	TRANS_QrCode_Len					320		
+#define	TRANS_QrCode_Nub				201
+
+#define	TRANS_QrCodeInitAdd				0x30000									
+#define	TRANS_QrCodeInitAddEnd			TRANS_QrCodeInitAdd+16
+
+#define	TRANS_QrCode_Count				TRANS_QrCodeInitAddEnd		
+#define	TRANS_QrCode_CountEnd			TRANS_QrCode_Count+16
+
+#define	TRANS_QrCode_Index       			TRANS_QrCode_CountEnd		
+#define	TRANS_QrCode_IndexEnd			TRANS_QrCode_Index+512
+
+#define	TRANS_QrCode_Addr				0x30400
+#define	TRANS_QrCode_AddrEnd				TRANS_QrCode_Addr+0xFC00
+
+//二维码退货交易
+#define	TRANS_ReturnQrCode_Len					320		
+#define	TRANS_ReturnQrCode_Nub				201
+
+#define	TRANS_ReturnQrCodeInitAdd				0x40000									
+#define	TRANS_ReturnQrCodeInitAddEnd			TRANS_ReturnQrCodeInitAdd+16
+
+#define	TRANS_ReturnQrCode_Count				TRANS_ReturnQrCodeInitAddEnd		
+#define	TRANS_ReturnQrCode_CountEnd			TRANS_ReturnQrCode_Count+16
+
+#define	TRANS_ReturnQrCode_Index       			TRANS_ReturnQrCode_CountEnd		
+#define	TRANS_ReturnQrCode_IndexEnd			TRANS_ReturnQrCode_Index+512
+
+#define	TRANS_ReturnQrCode_Addr				0x40400
+#define	TRANS_ReturnQrCode_AddrEnd			TRANS_ReturnQrCode_Addr+0xFC00
+
+
+//二维码撤销交易
+#define	TRANS_RepealQrCode_Len					320		
+#define	TRANS_RepealQrCode_Nub				201
+
+#define	TRANS_RepealQrCodeInitAdd				0x50000									
+#define	TRANS_RepealQrCodeInitAddEnd			TRANS_RepealQrCodeInitAdd+16
+
+#define	TRANS_RepealQrCode_Count				TRANS_RepealQrCodeInitAddEnd		
+#define	TRANS_RepealQrCode_CountEnd			TRANS_RepealQrCode_Count+16
+
+#define	TRANS_RepealQrCode_Index       			TRANS_RepealQrCode_CountEnd		
+#define	TRANS_RepealQrCode_IndexEnd			TRANS_RepealQrCode_Index+512
+
+#define	TRANS_RepealQrCode_Addr				0x50400
+#define	TRANS_RepealQrCode_AddrEnd			TRANS_RepealQrCode_Addr+0xFC00
+
+
+
+
+
+
+
+
+//-------------------------------------------------------------
+//IC AID应用记录
+#define	ICCard_Aid_Len					1024
+#define	ICCard_Aid_Nub					32
+
+#define	ICCard_Aid_InitAdd				0xa0000
+#define	ICCard_Aid_InitAddEnd			ICCard_Aid_InitAdd+16
+
+#define	ICCard_Aid_Count				ICCard_Aid_InitAddEnd
+#define	ICCard_Aid_CountEnd				ICCard_Aid_Count+16
+
+#define	ICCard_Aid_Index				ICCard_Aid_CountEnd
+#define	ICCard_Aid_IndexEnd				ICCard_Aid_Index+512
+
+#define	ICCard_Aid_Addr					0xa0400
+#define	ICCard_Aid_AddrEnd				ICCard_Aid_Addr+0xFC00
+
+//-------------------------------------------------------------
+//IC AID应用记录
+#define	ICCard_AidList_Len					64
+#define	ICCard_AidList_Nub					100
+
+#define	ICCard_Aid_InitListAdd				0xb0000
+#define	ICCard_Aid_InitAddListEnd			ICCard_Aid_InitListAdd+16
+
+#define	ICCard_Aid_CountList				ICCard_Aid_InitAddListEnd
+#define	ICCard_Aid_CountListEnd				ICCard_Aid_CountList+16
+
+#define	ICCard_Aid_IndexList				ICCard_Aid_CountListEnd
+#define	ICCard_Aid_IndexListEnd				ICCard_Aid_IndexList+512
+
+#define	ICCard_Aid_AddrList					0xb0400
+#define	ICCard_Aid_AddrListEnd				ICCard_Aid_AddrList+0xFC00
+
+//-------------------------------------------------------------
+//IC CAPK记录
+#define	ICCard_Capk_Len					512
+#define	ICCard_Capk_Nub					64
+
+#define	ICCard_Capk_InitAdd				0xc0000
+#define	ICCard_Capk_InitAddEnd			ICCard_Capk_InitAdd+16
+
+#define	ICCard_Capk_Count				ICCard_Capk_InitAddEnd
+#define	ICCard_Capk_CountEnd			ICCard_Capk_Count+16
+
+#define	ICCard_Capk_Index				ICCard_Capk_CountEnd
+#define	ICCard_Capk_IndexEnd			ICCard_Capk_Index+512
+
+#define	ICCard_Capk_Addr				0xc0400
+#define	ICCard_Capk_AddrEnd				ICCard_Capk_Addr+0xFC00
+
+//-------------------------------------------------------------
+//IC FailRecord记录
+#define	ICCard_FailRecord_Len				1024
+#define	ICCard_FailRecord_Nub				64-2
+
+#define	ICCard_FailRecord_InitAdd			0xd0000
+#define	ICCard_FailRecord_InitAddEnd		ICCard_FailRecord_InitAdd+16
+
+#define	ICCard_FailRecord_Count				ICCard_FailRecord_InitAddEnd
+#define	ICCard_FailRecord_CountEnd			ICCard_FailRecord_Count+16
+
+#define	ICCard_FailRecord_Index				ICCard_FailRecord_CountEnd
+#define	ICCard_FailRecord_IndexEnd			ICCard_FailRecord_Index+512
+
+#define	ICCard_FailRecord_Addr				0xd0400
+#define	ICCard_FailRecord_AddrEnd			ICCard_FailRecord_Addr+0xFC00
+
+
+
+
+
+
+
+//每个存储交易记录分0x60000==384k
+#define	TRADE_RECORD_NUM				253//250		//记录总条数
+#define	TRADE_RECODE_LEN				512			//记录最大长度	
+#define	TRADE_RECODE_STAR				0xE0000		//存储开始地址
+#define	TRADE_RECODE_BLOCK				0x20000		//每个交易记录最大分配空间
+#define	TRADE_RECODE_ADR					0x400		//交易记录存储偏移地址
+
+//-------------------------------------------------------------
+//一.消费交易记录存储
+#define	TRANS_SALE_Len					TRADE_RECODE_LEN									    //消费日志长度
+#define	TRANS_SALE_Nub					TRADE_RECORD_NUM//504								//消费日志条数
+
+#define	TRANS_SALEInitAdd				TRADE_RECODE_STAR								//第二个64K地址开始
+#define	TRANS_SALEInitAddEnd				TRANS_SALEInitAdd+16
+
+#define	TRANS_SALE_Count					TRANS_SALEInitAddEnd					//消费记录条数存储地址
+#define	TRANS_SALE_CountEnd				TRANS_SALE_Count+16
+
+#define	TRANS_SALE_Index               			TRANS_SALE_CountEnd					//消费日志索引区域		500
+#define	TRANS_SALE_IndexEnd				TRANS_SALE_Index+512
+
+#define	TRANS_SALE_Addr					TRANS_SALEInitAdd+TRADE_RECODE_ADR
+#define	TRANS_SALE_AddrEnd				TRANS_SALE_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+//-------------------------------------------------------------
+//二.消费撤销交易记录存储
+#define	TRANS_VOID_Len					TRADE_RECODE_LEN									    //消费撤销日志长度
+#define	TRANS_VOID_Nub					TRADE_RECORD_NUM//504								//消费撤销日志条数
+
+#define	TRANS_VOIDInitAdd				TRADE_RECODE_STAR+TRADE_RECODE_BLOCK								//第三个64K地址开始
+#define	TRANS_VOIDInitAddEnd				TRANS_VOIDInitAdd+16
+
+#define	TRANS_VOID_Count					TRANS_VOIDInitAddEnd					//消费撤销条数存储地址
+#define	TRANS_VOID_CountEnd				TRANS_VOID_Count+16
+
+#define	TRANS_VOID_index					TRANS_VOID_CountEnd					//消撤销索引区域
+#define	TRANS_VOID_indexEnd				TRANS_VOID_index+512
+
+#define	TRANS_VOID_Addr					TRANS_VOIDInitAdd+TRADE_RECODE_ADR
+#define	TRANS_VOID_AddrEnd				TRANS_VOID_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+//-------------------------------------------------------------
+//三.退货交易记录存储
+#define	TRANS_REFUND_Len					TRADE_RECODE_LEN									//退货记录长度
+#define	TRANS_REFUND_Nub					TRADE_RECORD_NUM//504								//退货记录条数
+
+#define	TRANS_REFUNDInitAdd				TRADE_RECODE_STAR+TRADE_RECODE_BLOCK*2								//第四个64K地址开始
+#define	TRANS_REFUNDInitAddEnd			TRANS_REFUNDInitAdd+16
+
+#define	TRANS_REFUND_Count				TRANS_REFUNDInitAddEnd				//退货记录条数存储地址
+#define	TRANS_REFUND_CountEnd			TRANS_REFUND_Count+16
+
+#define	TRANS_REFUND_index				TRANS_REFUND_CountEnd				//退货记录索引区域
+#define	TRANS_REFUND_indexEnd			TRANS_REFUND_index+512
+
+#define	TRANS_REFUND_Addr				TRANS_REFUNDInitAdd+TRADE_RECODE_ADR
+#define	TRANS_REFUND_AddrEnd				TRANS_REFUND_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+//-------------------------------------------------------------
+//离线结算交易记录存储
+#define	TRANS_OFF_SETT_Len				TRADE_RECODE_LEN									//离线结算记录长度
+#define	TRANS_OFF_SETT_Nub				TRADE_RECORD_NUM//504							//离线结算记录条数
+
+#define	TRANS_OFF_SETTInitAdd			TRADE_RECODE_STAR+TRADE_RECODE_BLOCK*3									//第四个64K地址开始
+#define	TRANS_OFF_SETTInitAddEnd		TRANS_OFF_SETTInitAdd+16
+
+#define	TRANS_OFF_SETT_Count			TRANS_OFF_SETTInitAddEnd			//退货记录条数存储地址
+#define	TRANS_OFF_SETT_CountEnd			TRANS_OFF_SETT_Count+16
+
+#define	TRANS_OFF_SETT_index			TRANS_OFF_SETT_CountEnd				//退货记录索引区域
+#define	TRANS_OFF_SETT_indexEnd			TRANS_OFF_SETT_index+512
+
+#define	TRANS_OFF_SETT_Addr				TRANS_OFF_SETTInitAdd+TRADE_RECODE_ADR
+#define	TRANS_OFF_SETT_AddrEnd			TRANS_OFF_SETT_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+//-------------------------------------------------------------
+//五.预授权交易记录存储
+#define	TRANS_AUTH_Len					TRADE_RECODE_LEN									//预授权日志长度
+#define	TRANS_AUTH_Nub					TRADE_RECORD_NUM//504							//预授权日志条数
+
+#define	TRANS_AUTHInitAdd				TRADE_RECODE_STAR+TRADE_RECODE_BLOCK*4									//第二个64K地址开始
+#define	TRANS_AUTHInitAddEnd			TRANS_AUTHInitAdd+16
+
+#define	TRANS_AUTH_Count				TRANS_AUTHInitAddEnd				//预授权记录条数存储地址
+#define	TRANS_AUTH_CountEnd				TRANS_AUTH_Count+16
+
+#define	TRANS_AUTH_Index        		TRANS_AUTH_CountEnd					//预授权日志索引区域		500
+#define	TRANS_AUTH_IndexEnd				TRANS_AUTH_Index+512
+
+#define	TRANS_AUTH_Addr					TRANS_AUTHInitAdd+TRADE_RECODE_ADR
+#define	TRANS_AUTH_AddrEnd				TRANS_AUTH_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+//-------------------------------------------------------------
+//六.预授权撤销交易记录存储
+#define	TRANS_CANCEL_Len				TRADE_RECODE_LEN									//预授权撤销日志长度
+#define	TRANS_CANCEL_Nub				TRADE_RECORD_NUM//504							//预授权撤销日志条数
+
+#define	TRANS_CANCELInitAdd				TRADE_RECODE_STAR+TRADE_RECODE_BLOCK*5								//第二个64K地址开始
+#define	TRANS_CANCELInitAddEnd			TRANS_CANCELInitAdd+16
+
+#define	TRANS_CANCEL_Count				TRANS_CANCELInitAddEnd				//预授权撤销记录条数存储地址
+#define	TRANS_CANCEL_CountEnd			TRANS_CANCEL_Count+16
+
+#define	TRANS_CANCEL_Index				TRANS_CANCEL_CountEnd				//预授权撤销日志索引区域		500
+#define	TRANS_CANCEL_IndexEnd			TRANS_CANCEL_Index+512
+
+#define	TRANS_CANCEL_Addr				TRANS_CANCELInitAdd+TRADE_RECODE_ADR
+#define	TRANS_CANCEL_AddrEnd			TRANS_CANCEL_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+//-------------------------------------------------------------
+//七.预授权完成交易记录存储
+#define	TRANS_AUTH_COMPLETE_Len			TRADE_RECODE_LEN									//预授权完成日志长度
+#define	TRANS_AUTH_COMPLETE_Nub		TRADE_RECORD_NUM//504							//预授权完成日志条数
+
+#define	TRANS_AUTH_COMPLETEInitAdd		TRADE_RECODE_STAR+TRADE_RECODE_BLOCK*6								//第二个64K地址开始
+#define	TRANS_AUTH_COMPLETEInitAddEnd	TRANS_AUTH_COMPLETEInitAdd+16
+
+#define	TRANS_AUTH_COMPLETE_Count		TRANS_AUTH_COMPLETEInitAddEnd		//预授权完成记录条数存储地址
+#define	TRANS_AUTH_COMPLETE_CountEnd	TRANS_AUTH_COMPLETE_Count+16
+
+#define	TRANS_AUTH_COMPLETE_Index       TRANS_AUTH_COMPLETE_CountEnd		//预授权完成日志索引区域		500
+#define	TRANS_AUTH_COMPLETE_IndexEnd	TRANS_AUTH_COMPLETE_Index+512
+
+#define	TRANS_AUTH_COMPLETE_Addr		TRANS_AUTH_COMPLETEInitAdd+TRADE_RECODE_ADR
+#define	TRANS_AUTH_COMPLETE_AddrEnd		TRANS_AUTH_COMPLETE_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+//-------------------------------------------------------------
+//八.预授权完成撤销交易记录存储
+#define	TRANS_COMPLETE_VOID_Len			TRADE_RECODE_LEN									//预授权完成撤销日志长度
+#define	TRANS_COMPLETE_VOID_Nub			TRADE_RECORD_NUM//504							//预授权完成撤销日志条数
+
+#define	TRANS_COMPLETE_VOIDInitAdd		TRADE_RECODE_STAR+TRADE_RECODE_BLOCK*7								//第二个64K地址开始
+#define	TRANS_COMPLETE_VOIDInitAddEnd	TRANS_COMPLETE_VOIDInitAdd+16
+
+#define	TRANS_COMPLETE_VOID_Count		TRANS_COMPLETE_VOIDInitAddEnd		//预授权完成撤销记录条数存储地址
+#define	TRANS_COMPLETE_VOID_CountEnd	TRANS_COMPLETE_VOID_Count+16
+
+#define	TRANS_COMPLETE_VOID_Index       TRANS_COMPLETE_VOID_CountEnd		//预授权完成撤销日志索引区域		500
+#define	TRANS_COMPLETE_VOID_IndexEnd	TRANS_COMPLETE_VOID_Index+512
+
+#define	TRANS_COMPLETE_VOID_Addr		TRANS_COMPLETE_VOIDInitAdd+TRADE_RECODE_ADR
+#define	TRANS_COMPLETE_VOID_AddrEnd		TRANS_COMPLETE_VOID_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+
+//-------------------------------------------------------------
+//七.预授权完成通知交易记录存储
+#define	TRANS_AUTH_SETTLEMENT_Len			TRADE_RECODE_LEN									//预授权完成日志长度
+#define	TRANS_AUTH_SETTLEMENT_Nub			TRADE_RECORD_NUM//504							//预授权完成日志条数
+
+#define	TRANS_AUTH_SETTLEMENTInitAdd		TRADE_RECODE_STAR+TRADE_RECODE_BLOCK*8								//第二个64K地址开始
+#define	TRANS_AUTH_SETTLEMENTInitAddEnd	TRANS_AUTH_SETTLEMENTInitAdd+16
+
+#define	TRANS_AUTH_SETTLEMENT_Count		TRANS_AUTH_SETTLEMENTInitAddEnd		//预授权完成记录条数存储地址
+#define	TRANS_AUTH_SETTLEMENT_CountEnd	TRANS_AUTH_SETTLEMENT_Count+16
+
+#define	TRANS_AUTH_SETTLEMENT_Index       TRANS_AUTH_SETTLEMENT_CountEnd		//预授权完成日志索引区域		500
+#define	TRANS_AUTH_SETTLEMENT_IndexEnd	TRANS_AUTH_SETTLEMENT_Index+512
+
+#define	TRANS_AUTH_SETTLEMENT_Addr		TRANS_AUTH_SETTLEMENTInitAdd+TRADE_RECODE_ADR
+#define	TRANS_AUTH_SETTLEMENT_AddrEnd		TRANS_AUTH_SETTLEMENT_Addr+TRADE_RECORD_NUM*TRADE_RECODE_LEN
+
+
+
+/*
+#if	SysSlecte	==	1
+//-------------------------------------------------------------
+//一.消费交易记录存储
+#define	TRANS_SALE_Len1					128									//消费日志长度
+#define	TRANS_SALE_Nub1					255//504							//消费日志条数
+
+#define	TRANS_SALEInitAdd1				0x100000							//第二个64K地址开始
+#define	TRANS_SALEInitAdd1End			TRANS_SALEInitAdd1+16
+
+#define	TRANS_SALE_Count1				TRANS_SALEInitAdd1End				//消费记录条数存储地址
+#define	TRANS_SALE_Count1End			TRANS_SALE_Count1+16
+
+#define	TRANS_SALE_Index1               TRANS_SALE_Count1End				//消费日志索引区域		500
+#define	TRANS_SALE_Index1End			TRANS_SALE_Index1+512
+
+#define	TRANS_SALE_Addr1				0x100400
+#define	TRANS_SALE_Addr1End				TRANS_SALE_Addr1+0xFC00
+
+//-------------------------------------------------------------
+//二.消费撤销交易记录存储
+#define	TRANS_VOID_Len1					128									//消费撤销日志长度
+#define	TRANS_VOID_Nub1					255//504							//消费撤销日志条数
+
+#define	TRANS_VOIDInitAdd1				0x110000							//第三个64K地址开始
+#define	TRANS_VOIDInitAdd1End			TRANS_VOIDInitAdd1+16
+
+#define	TRANS_VOID_Count1				TRANS_VOIDInitAdd1End				//消费撤销条数存储地址
+#define	TRANS_VOID_Count1End			TRANS_VOID_Count1+16
+
+#define	TRANS_VOID_index1				TRANS_VOID_Count1End				//消撤销索引区域
+#define	TRANS_VOID_index1End			TRANS_VOID_index1+512
+
+#define	TRANS_VOID_Addr1				0x110400
+#define	TRANS_VOID_Addr1End				TRANS_VOID_Addr1+0xFC00
+
+//-------------------------------------------------------------
+//三.退货交易记录存储
+#define	TRANS_REFUND_Len1				256									//退货记录长度
+#define	TRANS_REFUND_Nub1				255//504							//退货记录条数
+
+#define	TRANS_REFUNDInitAdd1			0x120000							//第四个64K地址开始
+#define	TRANS_REFUNDInitAdd1End			TRANS_REFUNDInitAdd1+16
+
+#define	TRANS_REFUND_Count1				TRANS_REFUNDInitAdd1End				//退货记录条数存储地址
+#define	TRANS_REFUND_Count1End			TRANS_REFUND_Count1+16
+
+#define	TRANS_REFUND_index1				TRANS_REFUND_Count1End				//退货记录索引区域
+#define	TRANS_REFUND_index1End			TRANS_REFUND_index1+512
+
+#define	TRANS_REFUND_Addr1				0x120400
+#define	TRANS_REFUND_Addr1End			TRANS_REFUND_Addr1+0xFC00
+
+//-------------------------------------------------------------
+//离线结算交易记录存储
+#define	TRANS_OFF_SETT_Len1				128									//离线结算记录长度
+#define	TRANS_OFF_SETT_Nub1				255//504							//离线结算记录条数
+
+#define	TRANS_OFF_SETTInitAdd1			0x150000							//第四个64K地址开始
+#define	TRANS_OFF_SETTInitAdd1End		TRANS_OFF_SETTInitAdd1+16
+
+#define	TRANS_OFF_SETT_Count1			TRANS_OFF_SETTInitAdd1End			//退货记录条数存储地址
+#define	TRANS_OFF_SETT_Count1End		TRANS_OFF_SETT_Count1+16
+
+#define	TRANS_OFF_SETT_index1			TRANS_OFF_SETT_Count1End			//退货记录索引区域
+#define	TRANS_OFF_SETT_index1End		TRANS_OFF_SETT_index1+512
+
+#define	TRANS_OFF_SETT_Addr1			0x150400
+#define	TRANS_OFF_SETT_Addr1End			TRANS_OFF_SETT_Addr1+0xFC00
+
+//-------------------------------------------------------------
+//五.预授权交易记录存储
+#define	TRANS_AUTH_Len1					128									//预授权日志长度
+#define	TRANS_AUTH_Nub1					255//504							//预授权日志条数
+
+#define	TRANS_AUTHInitAdd1				0x160000							//第二个64K地址开始
+#define	TRANS_AUTHInitAdd1End			TRANS_AUTHInitAdd1+16
+
+#define	TRANS_AUTH_Count1				TRANS_AUTHInitAdd1End				//预授权记录条数存储地址
+#define	TRANS_AUTH_Count1End			TRANS_AUTH_Count1+16
+
+#define	TRANS_AUTH_Index1        		TRANS_AUTH_Count1End				//预授权日志索引区域		500
+#define	TRANS_AUTH_Index1End			TRANS_AUTH_Index1+512
+
+#define	TRANS_AUTH_Addr1				0x160400
+#define	TRANS_AUTH_Addr1End				TRANS_AUTH_Addr1+0xFC00
+
+//-------------------------------------------------------------
+//六.预授权撤销交易记录存储
+#define	TRANS_CANCEL_Len1				128									//预授权撤销日志长度
+#define	TRANS_CANCEL_Nub1				255//504							//预授权撤销日志条数
+
+#define	TRANS_CANCELInitAdd1		    0x170000							//第二个64K地址开始
+#define	TRANS_CANCELInitAdd1End			TRANS_CANCELInitAdd1+16
+
+#define	TRANS_CANCEL_Count1				TRANS_CANCELInitAdd1End				//预授权撤销记录条数存储地址
+#define	TRANS_CANCEL_Count1End			TRANS_CANCEL_Count1+16
+
+#define	TRANS_CANCEL_Index1				TRANS_CANCEL_Count1End				//预授权撤销日志索引区域		500
+#define	TRANS_CANCEL_Index1End			TRANS_CANCEL_Index1+512
+
+#define	TRANS_CANCEL_Addr1				0x170400
+#define	TRANS_CANCEL_Addr1End			TRANS_CANCEL_Addr1+0xFC00
+
+//-------------------------------------------------------------
+//七.预授权完成交易记录存储
+#define	TRANS_AUTH_COMPLETE_Len1		128									//预授权完成日志长度
+#define	TRANS_AUTH_COMPLETE_Nub1		255//504							//预授权完成日志条数
+
+#define	TRANS_AUTH_COMPLETEInitAdd1		0x180000							//第二个64K地址开始
+#define	TRANS_AUTH_COMPLETEInitAdd1End	TRANS_AUTH_COMPLETEInitAdd1+16
+
+#define	TRANS_AUTH_COMPLETE_Count1		TRANS_AUTH_COMPLETEInitAdd1End		//预授权完成记录条数存储地址
+#define	TRANS_AUTH_COMPLETE_Count1End	TRANS_AUTH_COMPLETE_Count1+16
+
+#define	TRANS_AUTH_COMPLETE_Index1      TRANS_AUTH_COMPLETE_Count1End		//预授权完成日志索引区域		500
+#define	TRANS_AUTH_COMPLETE_Index1End	TRANS_AUTH_COMPLETE_Index1+512
+
+#define	TRANS_AUTH_COMPLETE_Addr1		0x180400
+#define	TRANS_AUTH_COMPLETE_Addr1End	TRANS_AUTH_COMPLETE_Addr1+0xFC00
+
+//-------------------------------------------------------------
+//八.预授权完成撤销交易记录存储
+#define	TRANS_COMPLETE_VOID_Len1			128									//预授权完成撤销日志长度
+#define	TRANS_COMPLETE_VOID_Nub1		255//504							    //预授权完成撤销日志条数
+
+#define	TRANS_COMPLETE_VOIDInitAdd1		0x190000							    //第二个64K地址开始
+#define	TRANS_COMPLETE_VOIDInitAdd1End	TRANS_COMPLETE_VOIDInitAdd1+16
+
+#define	TRANS_COMPLETE_VOID_Count1		TRANS_COMPLETE_VOIDInitAdd1End		    //预授权完成撤销记录条数存储地址
+#define	TRANS_COMPLETE_VOID_Count1End	TRANS_COMPLETE_VOID_Count1+16
+
+#define	TRANS_COMPLETE_VOID_Index1       	TRANS_COMPLETE_VOID_Count1End		//预授权完成撤销日志索引区域		500
+#define	TRANS_COMPLETE_VOID_Index1End	TRANS_COMPLETE_VOID_Index1+512
+
+#define	TRANS_COMPLETE_VOID_Addr1		0x190400
+#define	TRANS_COMPLETE_VOID_Addr1End	TRANS_COMPLETE_VOID_Addr1+0xFC00
+
+#endif
+*/
+
+//------------------------------------------------------------
+#define	APP_SIZE						512*1024
+#define	APP_BACKUPS_ADDR				0x300000	//0x160000					//APP备份地址
+#define	APP_BACKUPS_ADDR_END			APP_BACKUPS_ADDR+APP_SIZE
+
+#define	FLASH_TEST_ADDR					0x300000+480*1024						//用于测试外部FLASH
+
+#define	APP_REMOTE_ADDR					APP_BACKUPS_ADDR_END					//远程升级APP地址
+#define	APP_REMOTE_ADDR_END				APP_REMOTE_ADDR+APP_SIZE
+
+//------------------------------------------------------------
+
+#ifndef byte
+#define byte   unsigned char
+#endif
+
+#ifndef word
+#define word   unsigned short
+#endif
+
+#ifndef dword
+#define dword  unsigned long
+#endif
+
+#ifndef u8
+#define u8   unsigned char
+#endif
+
+#ifndef u16
+#define u16   unsigned short
+#endif
+
+#ifndef u32
+#define u32   unsigned int
+#endif
+
+byte get_byte(dword address);
+byte set_byte(byte d,dword addr);
+void  get_str(dword address,word l,byte *str);
+byte  set_str(dword addr,word l,byte *str);
+unsigned char mess_save(dword count,dword address,dword index,u16 max_count,u16 lenght,byte w_flag,byte buf[]);
+byte flash_init(byte Reset_flag,byte InitMode);
+void ClearTradeLog(void);
+int GetPrintDegree(unsigned char *OutData);
+unsigned char SaveSalePhone(unsigned char *InData,unsigned short DataLen);
+unsigned char SetDisModeView(unsigned char *InData,unsigned short DataLen);
+unsigned char GetDisModeView(unsigned char *OutData,unsigned short DataLen);
+unsigned char GetSalePhone(unsigned char *OutData,unsigned short DataLen);
+
+unsigned char GetPOSLockInfor(unsigned char *OutData);
+
+u8 GetSaleCount(unsigned char *OutData);
+u8 GetVOIDCount(unsigned char *OutData);
+u8 GetRefundCount(unsigned char *OutData);
+u8 GetOffSettCount(unsigned char *OutData);
+u8 GetAuthCount(unsigned char *OutData);
+u8 GetCancelCount(unsigned char *OutData);
+u8 GetCompleteCount(unsigned char *OutData);
+u8 GetCompleteVoidCount(unsigned char *OutData);
+
+int SaveCurrentTraceNo(unsigned char *InData);
+int GetCurrentTraceNo(unsigned char *OutData);
+
+int SaveCurrentBatchNum(unsigned char *InData);
+int GetCurrentBatchNum(unsigned char *OutData);
+
+u8 SaveSaleRecord(u8 *InData);
+u8 SaveVoidRecord(u8 *InData);
+u8 SaveOffLineRecord(u8 *InData);
+u8 SaveAuthRecord(u8 *InData);
+u8 SaveCancelRecord(u8 *InData);
+u8 SaveCancelRecord(u8 *InData);
+u8 SaveCompleteRecord(u8 *InData);
+u8 SaveCompleteVoidRecord(u8 *InData);
+
+u8 SaveRefundRecord(u8 *InData);
+
+u16 GetAuthIndex(u16 InDex);
+u8 GetAuthData(u32 nAddr,u16 nGetLen,u8 *OutData,u8 nMode);
+
+u16 GetCompleteIndex(u16 InDex);
+u8 GetCompleteData(u32 nAddr,u16 nGetLen,u8 *OutData,u8 nMode);
+extern u8 GetQrCodeCount(unsigned char *OutData);
+extern u16 GetQrCodeIndex(u16 InDex);
+extern u8 GetQrCodeData(u32 nAddr,u16 nGetLen,u8 *OutData,u8 nMode);
+extern u8 SaveQrCodeRecord(u8 *InData);
+extern u8 GetReturnQrCodeCount(unsigned char *OutData);
+extern u16 GetReturnQrCodeIndex(u16 InDex);
+extern u8 GetReturnQrCodeData(u32 nAddr,u16 nGetLen,u8 *OutData,u8 nMode);
+extern u8 SaveReturnQrCodeRecord(u8 *InData);
+
+#endif
+
+f
+

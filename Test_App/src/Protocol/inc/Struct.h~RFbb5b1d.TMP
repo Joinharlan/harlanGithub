@@ -1,0 +1,513 @@
+#ifndef	__STRUCT_H__
+#define	__STRUCT_H__
+
+#include	"ProtocolDef.h"
+
+#define	TRANS_LOGON					0		//签到
+#define	TRANS_SALE					1		//消费
+#define	TRANS_VOID					2		//撤销
+#define	TRANS_REFUND				3		//退货
+#define	TRANS_QUERY					4		//查询
+#define	TRANS_CHANGEPWD				5
+#define	TRANS_LOGOFF				6		//签退
+#define	TRANS_SETT					7		//批结算
+#define	TRANS_BATCHUP				8		//批上送
+#define	TRANS_BATCHUP1				9		//批详情(退货交易使用)
+#define	TRANS_BATCHUPEND			10		//批上送结束
+#define	TRANS_BATCHUPEND1			11		//批上送结束
+#define	TRANS_REVERSE				12		//冲正
+
+#define	TRANS_AUTH					13		//预授权
+#define	TRANS_AUTH_COMPLETE			14		//预授权完成请求
+#define	TRANS_AUTH_SETTLEMENT		15		//预授权完成通知
+#define	TRANS_CANCEL				16		//预授权撤销
+#define	TRANS_COMPLETE_VOID			17		//预授权完成撤销
+#define	TRANS_OFFLINE				18		//离线结算
+#define	TRANS_ADJUST				19		//离线调整
+
+#define	TRANS_ECHOTEST				20		//回响测试
+#define	TRANS_MKEYDOWN				21		//主密钥下载
+
+//------------------------------------------------------------------------
+//IC卡相关的
+//add for emv
+#define	TRANS_EC_SALE				22		//电子现金消费(电子现金普通支付)
+#define	TRANS_EC_QUEAMT       		28		//电子现金查余额
+#define	TRANS_EC_QUEMX				29		//Ec查明细
+#define	TRANS_EC_REFUND				30		//IC卡电子现金退货交易
+#define	TRANS_QPBOC_CON				23		//非接消费
+#define	TRANS_QPBOC_QUEAMT			27		//非接查余额
+#define	TRANS_ICC_OFFSALE				24		//ic卡离线消费
+#define	TRANS_REFUND_VOID   			26		//退货撤销
+#define   TRANS_UPLOAD_SCRIPT_RESULT	27		//上送脚本结果
+
+#define   TRANS_EC_QC					28		//指定帐户 电子现金圈存
+#define   TRANS_NEC_QC					29		//非指定帐户 电子现金圈存
+#define   TRANS_CASH_QC					30		//现金充值
+#define   TRANS_CASH_QC_VOID			31		//现金充值撤销
+
+#define   TRANS_OFF_SALE_BAT   			32		//批上送 离线结算	*/
+#define   TRANS_OFF_ADJUST_BAT			33		//批上送 结算调整	OFF_ADJUST_BAT*/
+#define   TRANS_OFF_CONFIRM_BAT		    34		//批上送 完成离线	*/
+#define   TRANS_ADJUST_TIP_BAT			35		//批上送 结算调整	ADJUST_TIP_BAT*/
+
+#define   TRANS_DOWNLOAD_EMV_CAPK	36		//IC卡公钥下载
+#define   TRANS_DOWNLOAD_EMV_PARAM 	37		//EMV参数下载
+#define   TRANS_QUERY_EMV_CAPK 		38		//查询IC卡公钥
+#define   TRANS_QUERY_EMV_PARAM		39		//查询IC卡参数
+#define   TRANS_END_EMV_CAPK		40		//结束IC卡公钥下载
+#define   TRANS_END_EMV_PARAM		41		//结束IC卡参数下载
+
+#define   TRANS_DOWNLOAD_BLACK_LIST	42		//卡BIN黑名单下载
+#define   TRANS_END_BLACK_LIST		43		//结束卡BIN黑名单下载
+
+#define		TRANS_POSParaTMS			44		//TMS参数下载
+#define		TRANS_POSParaInfor			45		//终端参数下载
+#define		TRANS_POSParaInfor2		46		//终端参数下载
+
+#define   TRANS_ONLINE_DOWNLOAD_MK_CAPK		47		//联机下载主密钥-下载公钥
+#define   TRANS_ONLINE_DOWNLOAD_MK			48		//联机下载主密钥
+#define   TRANS_END_ONLINE_DOWNLOAD_MK		49		//联机下载主密钥完成
+
+#define   TRANS_ICC_TC_UPLOAD					50		//tc值上送
+
+#define	  TRANS_SWEEPCODE_SALE				51		//扫码收款
+#define	  TRANS_SWEEPCODE_SALE_PRINT			52		//扫码收款签购单
+
+#define   TRANS_SALE_RESULT_QUERY				53		//实时消费结果查询
+
+#define	  TRANS_SWEEPCODE_POSTOPHONE			54		//反扫(POS扫手机)
+#define	  TRANS_SWEEPCODE_PHONETOPOS			55		//正扫(手机扫POS)
+
+#define	  TRANS_SWEEPCODE_POSTOPHONE_QUERY	56		//反扫查询
+#define	  TRANS_SWEEPCODE_PHONETOPOS_QUERY	57		//正扫查询
+
+#define		OK								0x00
+#define		ERROR							0x01
+
+#define 	ZFB_PLAY						0x01	//支付宝支付
+#define 	WX_PLAY							0x02	//微信支付
+#define 	YL_PLAY							0x03	//银联支付
+
+#define		Z_SweepCode					0x01	//正扫
+#define		F_SweepCode					0x03	//反扫
+
+typedef struct
+{
+	unsigned char Used;						//操作员信息标志
+	unsigned char OperID;					//操作员ID号
+	unsigned char IDType;					//操作员类型
+	unsigned char Login;					//签到状态
+	unsigned char Password[5];				//密码
+}TUser;
+
+typedef struct
+{
+	unsigned char ucCommWaitTime;			//等待超时间
+	unsigned char ucKeyMode;				//密钥模式,双密钥及单密钥
+	unsigned char szCurrCode[3];			//货币代码	49域	人民币156
+	unsigned char szPosId[9];				//终端号
+	unsigned char szUnitNum[16];			//商户号 42
+	unsigned int lNowBatchNum;				//批次号
+	unsigned int lTraceNo;					//域11	流水号
+	unsigned char sTpdu[6];					//TPDU
+}TermPosParm;
+
+//----------------------------------------------------------------------
+//交易数据格式结构体
+typedef struct _TRANS_8583PACKET_STRC 
+{
+	unsigned char  iTransNo;        			//交易代号 
+	unsigned char  szTransCode[7];  			//处理码 			域3
+	unsigned char  action;						//		
+	unsigned char  sSevCode[3];				    //服务点条件码   f25
+	unsigned char  sMessCode[3];				//消息类型码     f60.1
+	unsigned char  sNetInfoCode[4]; 			//网络管理信息码 f60.3
+	unsigned char  sSendMsgId[5];   			//S(4)	类型码
+	unsigned char  sRecvMsgId[5];   			//S(4)
+	unsigned char  sBitmapSend[8];				//8583 Packet Bit Map S(8)  
+//	unsigned char  sBitmapRecv[8];
+} TRANS_8583PACKET_STRC;
+
+typedef struct _nTempSTRC 
+{
+	unsigned char  iTransNo;        			//交易代号(原交易)
+	unsigned char  szTransCode[7];  			//处理码 	域3	变量处理码
+	unsigned char  action;			
+	unsigned char  sSevCode[3];				    //服务点条件码   f25	//域22	服务点输入方式
+	unsigned char  sMessCode[3];				//消息类型码     f60.1
+	unsigned char  sNetInfoCode[4]; 			//网络管理信息码 f60.3
+	unsigned char  sSendMsgId[5];   			//S(4)   
+	unsigned char  sRecvMsgId[5];   			//S(4)
+	unsigned char  sBitmapSend[8];				//8583 Packet Bit Map S(8)  
+	unsigned char  sBitmapRecv[8];
+	unsigned char  sPacketHead[7]; 
+} nTempSTRC ;
+
+typedef struct  _TrsansStruct
+{
+	unsigned char  iTransNo;        				//交易代号(当前交易)
+	unsigned int lAmount;						//域4	交易金额
+	unsigned char szTime[7];					//域12	受卡方所在时间
+	unsigned char szDate[5];					//域13	受卡方所在日期
+	unsigned char szRefNo[13];					//域37	检索参考号	12
+	unsigned char szSysReferNo[7];				//域38	授权标识码	6 凭证号
+	unsigned char aResponseData[25];			//域44 发卡行附加数据
+	unsigned char AccountType[3];				//域54	帐户类型	10储蓄帐号 20支票帐号 30信用卡帐号 90积分帐号
+	unsigned char sAmountType[3];				//域54	余额类型
+	unsigned char ucAmtSign;					//域54	余额符号
+	unsigned long long sAmount;						//域54	附加金额
+
+	unsigned int lOldTraceNo;					//旧交易流水号
+	unsigned int lOldTraceNo1;					//旧交易流水号
+	unsigned int lOldBatchNumber;				//旧批次号
+	unsigned char szOldTxnDate[5];				//原交易日期
+	unsigned char szOldTxnTime[7];			//原交易时间
+	unsigned char szOldRefNo[13];				//原参考号
+	unsigned char TempCUP[3];					//存储发卡机构(CUP为内卡消费)
+	
+	//add for emv
+	// EMV交易数据
+	unsigned char     szExpDate[5];
+	unsigned char	sIccData[255];
+	unsigned char	iIccDataLen;
+	unsigned char	bPanSeqNoOk;		// ADVT case 43 [3/31/2006 Tommy]
+	unsigned char	ucPanSeqNo;			// App. PAN sequence number
+//	unsigned char	ucICCForceOnlien;
+	unsigned char	sAppCrypto[9];		// app. cryptogram
+	unsigned char	sAuthRspCode[2];
+	unsigned char	TransResult;
+	unsigned char	sTVR[6];
+	unsigned char	szAID[32+1];
+	unsigned char	szAppLable[32+1];
+	unsigned char	szAppPreferName[16+1];
+	unsigned char	sTSI[3];
+	unsigned char	sATC[3];
+	unsigned char	ucFallBack;			/*原交易是否FALLBACK  0:不是  1:是*/
+	unsigned char	ucSwipeFlag;		// swipe flag
+	unsigned char	EcTrans;			//电子现金交易
+	unsigned char	Ec_Balance[13];
+	unsigned char	szCardUnit[4];		/*卡组织：CUP VIS MAS*/
+}TrsansStruct;
+
+typedef struct
+{
+	unsigned char ReversalFlag;				//冲正标位
+	unsigned char ReversalFlag1;				//冲正标位
+	unsigned char	iTransNo;					//交易类型,指的什么交易
+	unsigned char TrackPAN[21];				//域2	主帐号
+	unsigned char CardValid[5];				//域14	卡有效期
+	unsigned char SettlementDate[5];			//域15	清算日期	
+	unsigned char szEntryMode[3];				//域22	服务点输入方式
+
+	unsigned char szTrack2[40];				//域35	磁道2数据	第一个字节为长度
+	unsigned char szTrack3[108];				//域36	磁道3数据	前两个字节是长度
+	unsigned char szRespCode[3];				//域39	应签码
+
+	unsigned char sPIN[13];					//域52	个人标识数据(pind ata)
+	unsigned char PsamNu[16];
+
+	TrsansStruct	stTrans;
+	nTempSTRC	stTrnTbl;
+
+	unsigned char AccountType;				//用于示标识消费类型1=t+0实时消费 、2=普通消费
+	unsigned char Sale_Type;//实时消费状态(1消费成功   2结果不确定 3交易成功且做查询结果并打印)
+	
+	//add for emv card
+	unsigned char  ucFallBack;						//TRUE , FALSE
+	unsigned char  ucSwipedFlag;						//刷卡的标志
+	unsigned char  bOnlineTxn;						//ICC online falg
+	unsigned char  sScriptDE55[128];
+	int    iScriptDE55Len;
+	unsigned char  sReversalDE55[128];				//冲正和脚本通知的BIT 55数据
+	int    iReversalDE55Len;
+	unsigned char  szCertData[2+20+1];				//type(2)+ID no(20)
+	unsigned char  ucPinEntry;						//TRUE: PIN enter, FALSE: No PIN enter
+	unsigned char szRecvField55Iccdata[300];			//20090218 用来存接收到的55域信息512->300
+	int   iRecvIccdataLen;
+	
+	unsigned char  sField62[512];//512->40
+	int    iField62Len;   //12/05/17
+}FieldData;
+
+//用于保存交易记录的结构体
+typedef struct
+{
+	unsigned char TradeType;					//交易类型
+	unsigned char ProType;					    //标志状态(0x01表示没有被撤销或退货款,0x02撤销,0x03已上送)
+	unsigned char Sale_Type;//实时消费状态(1消费成功   2结果不确定 3交易成功且做查询结果并打印)
+
+	unsigned int LoglTraceNo;					//流水号
+	unsigned int LoglAmount;					//金额
+	unsigned int LoglNowBatchNum;			    //批次号
+	unsigned char LogTempCUP[3];				//国际信用卡代码
+	unsigned char LogszRefNo[13];				//参考号
+	unsigned char LogszSysReferNo[7];			//授权码
+	unsigned char LoglTrackPAN[21];			    //主帐号
+	unsigned char LogCardValid[5];				//卡有效期
+	unsigned char LogeaResponseData[25];		//发卡行信息
+	unsigned char Logyear[5];					//年份
+	unsigned char LogTime[7];					//域12	受卡方所在时间
+	unsigned char LogDate[5];					//域13	受卡方所在日期
+	unsigned char ucSwipedFlag;
+	unsigned int LogOldlTraceNo;				//原流水号
+	unsigned int LogOldlTraceNo1;				//原流水号
+	unsigned char AccountType;				    //用于示标识消费类型1=t+0、2=普通消费
+
+	unsigned char LogucPanSeqNo;
+	unsigned char LogszAID[33];
+	unsigned char LogsAppCrypto[9];
+	unsigned char LogsAuthRspCode[2];
+	unsigned char LogsTVR[6];
+	unsigned char LogsTSI[3];
+	unsigned char LogsATC[3];
+
+	unsigned char LogszPosId[8];				//打印终端号
+	unsigned char LogszUnitNum[15];			//打印商户号
+}LogFile;
+
+//用于保存交易记录的结构体
+typedef struct
+{
+	unsigned char	TradeType;					// 1交易类型
+	unsigned char ProType;					// 1标志状态(0x01表示没有被撤销或退货款,0x02撤销,0x03已上送)
+	unsigned char Sale_Type;					//实时消费状态(1消费成功  2结果不确定)
+	
+	unsigned int LoglTraceNo;					// 4流水号
+	unsigned int LoglAmount;					// 4金额
+	unsigned int LoglNowBatchNum;			// 4批次号
+	unsigned char LogTempCUP[3];				// 3国际信用卡代码
+	unsigned char LogszRefNo[13];				// 13参考号
+	unsigned char LogszSysReferNo[7];			// 7授权码
+	unsigned char LoglTrackPAN[21];			// 21主帐号
+	unsigned char LogCardValid[5];				// 5卡有效期
+	unsigned char LogeaResponseData[25];		// 25发卡行信息
+	unsigned char Logyear[5];					// 5年份
+	unsigned char LogTime[7];					// 7域12	受卡方所在时间
+	unsigned char LogDate[5];					// 5域13	受卡方所在日期	
+	unsigned char ucSwipedFlag;
+	unsigned int LogOldlTraceNo;				// 4原流水号
+	unsigned int LoglOldBatchNumber;			// 4旧批次号	
+	unsigned char LogAccountType;				//用于示标识消费类型1=t+0实时消费 、2=普通消费
+
+	unsigned char LogOldszRefNo[13];			// 13原参考号
+	unsigned char LogszTrack2[22];				// 22域35	磁道2数据	第一个字节为长度
+	unsigned char LogszTrack3[54];				// 54域36	磁道3数据	前两个字节是长度
+
+	unsigned char LogucPanSeqNo;
+	unsigned char LogszAID[33];
+	unsigned char LogsAppCrypto[9];
+	unsigned char LogsAuthRspCode[2];
+	unsigned char LogsTVR[6];
+	unsigned char LogsTSI[3];
+	unsigned char LogsATC[3];
+
+	//unsigned char LogszPosId[8];				//打印终端号
+	//unsigned char LogszUnitNum[15];			//打印商户号
+}LogFile1;
+
+/*
+typedef struct
+{
+	unsigned int lDebitAmt;						//消费总笔数
+	unsigned char VoidTotal;					//撤消总笔数
+	unsigned char RefundTotal;					//退货总笔数
+	unsigned char VoidRefundTotal;				//撤消与退货总笔数
+	
+	unsigned char SaleTotallAmount[8];			//消费总金额	
+	unsigned char VoidTotallAmount[8];			//撤消总金额	
+	unsigned char RefundTotallAmount[8];			//退货总金额	
+	unsigned char VoidRefundTotalAmount[8];		//撤消与退货总金额
+}
+LOG_STRC;
+*/
+//借记:消费金额，预授权完成请求金额，预授权完成通知金额，离线结算金额，结算调整金PBOC相关金额
+//贷记:退货金额，消费撤销金额,预授权完成撤销金额，
+typedef struct _LOG_STRC
+{
+	unsigned int lDebitAmt;				//内卡借记总金额
+	unsigned int iDebitNum;				//内卡借记总笔数		借方
+
+	unsigned int lCreditAmt;				//内卡贷记总金额
+	unsigned int iCreditNum;				//内卡贷记总笔数		贷方
+	
+//	unsigned int lDebitTotalAmt;			//借记总金额
+//	unsigned int lDebitTotalNum;			//借记总笔数
+
+	unsigned char ucRmbSettRsp;			//内卡对帐结果
+	//-----------------------------------------------------------------------
+	unsigned int lFrnDebitAmt;				//外卡借记总金额		借方
+	unsigned int iFrnDebitNum;				//外卡借记总笔数	
+	
+	unsigned int lFrnCreditAmt;			//外卡贷记总金额		贷方
+	unsigned int iFrnCreditNum;			//外卡贷记总笔数
+	
+//	unsigned int lFrnDebitTotalAmt;		//贷记总金额
+//	unsigned int iFrnDebitTotalNum;		//贷记总笔数
+
+	unsigned char ucFrnSettRsp;			//外卡对帐结果
+}LOG_STRC;
+
+typedef struct _LOG_STRC1
+{
+	unsigned char resultMode;			//对帐结果:=0对账平  =1对账不平
+	
+	unsigned int lSaveAmt;				//消费总金额
+	unsigned int iSaveNum;				//消费总笔数		
+
+	unsigned int lVoidAmt;				//撤销总金额
+	unsigned int iVoidNum;				//撤销总笔数		
+	
+ 	unsigned int lRefundAmt;			//退货总金额
+ 	unsigned int iRefundNum;			//退货总笔数
+
+	unsigned int lAuthCompleteAmt;				//预授权完成总金额		
+	unsigned int iAuthCompleteNum;				//预授权完成总笔数	
+	
+	unsigned int lAuthCompleteVoidAmt;			//预授权完成撤销总金额		
+	unsigned int iAuthCompleteVoidNum;			//预授权完成撤销总笔数
+
+	unsigned int lTotalAmt;				//总金额
+	unsigned int iTotalNum;				//总笔数	
+	
+}LOG_STRC1;
+
+typedef struct _BATCHUP
+{	
+	unsigned char nTradeNum;				//交易笔数
+	unsigned char nUpFlagSale[10];			//消费记录索引
+	unsigned char nUpFlagVOID[10];		//撤销记录索引
+	unsigned char nTradeDetail1[20];		//交易明细1
+	unsigned char nTradeDetail2[20];		//交易明细2
+	
+	unsigned char nTradeDetail3[20];		//交易明细3
+	unsigned char nTradeDetail4[20];		//交易明细4
+
+	unsigned char nTradeDetail5[20];		//交易明细5
+	unsigned char nTradeDetail6[20];		//交易明细6
+	
+	unsigned char nTradeDetail7[20];		//交易明细7
+	unsigned char nTradeDetail8[20];		//交易明细8
+}BATCHUP;
+
+typedef struct _JSON_DATA1
+{
+	unsigned char  subMchId[15];    		//商户号
+	unsigned char  nonceStr[32];  			//随机字符串
+	unsigned char  outTradeNo[22]; 		//外部系统订单号                
+	unsigned char  merchantId[15];				//签名
+	unsigned char  body[14];	    		//商品描述
+	unsigned char  detail[12];       		//商品详情
+	unsigned char  attach[3];   			//附加数据
+	unsigned int   totalFee;   				//总金额
+	unsigned char  goodsTag[14];			//商品标记
+	unsigned char  opUserId[14];			//操作者id
+	unsigned char  businessSystemId[14];	//外部系统id
+	unsigned char  spbillCreateIp[16];		//终端 IP
+	unsigned char  authCode[8];			//授权码	
+	unsigned char  notifyUrl[50];			//网址
+	unsigned char  termNo[8];				//终端号
+	unsigned char  codeUrl[50];				//二维码
+	unsigned char  resultCode[16];			//应答码
+}JSON_DATA1;
+
+
+typedef struct _JSON_DATA2
+{
+	unsigned int  total_fee;    		//支付金额
+	unsigned char  product_code[20];  		//订单业务类型
+	unsigned char  seller_email[50]; 		//卖家支付宝账号                
+	unsigned char  _input_charset[6];				
+	unsigned char  body[14];	    		//商品描述
+	unsigned char  service[25];       		
+	unsigned char  out_trade_no[22];   	//订单号
+	unsigned char  termNo[8];   			//终端号	
+	unsigned char  operator_id[14];		//卖家的操作者id	 操作员号
+	unsigned char  subject[14];				//订单标题
+	unsigned char  partner[20];				//合作伙伴
+	unsigned char  notify_url[60];			//服务器异步通知页面路径
+	unsigned char  merchantId[15];			//商户号	
+	unsigned char  result_code[7];			//返回应答码
+	unsigned char  qr_code[50];				//二维码
+	unsigned char  trade_status[14];		//查询返回应答码
+}JSON_DATA2;
+
+typedef struct _WECHATPAY
+{
+	unsigned char  txcode[7];    	    //交易码
+	unsigned char  txdate[9];  			//交易日期 YYYYMMDD
+	unsigned char  txtime[7]; 		    //交易时间 HHMMSS                 
+	unsigned char  version[9];			//版本号
+	unsigned char  contextlen[7];	    //报文长度
+	JSON_DATA1     Jsondata;           //报文数据JSON??
+	JSON_DATA2 	   Jsondata2;
+	unsigned char  context[512];
+	unsigned char  returncode[30];   	//应答码
+	unsigned char  retmsglen[7];   	//应答信息长度
+	unsigned char  returnmsg[100];		//应答信息
+	unsigned char  tradeState[7];		//交易状态
+}WECHATPAY;
+
+
+typedef struct _SCRIPT
+{
+	
+	unsigned char SendFlag; 						//0不上送，1上送
+	unsigned char TrackPAN[21];					//域2卡号
+	unsigned char TransCode[7];					//域3交易处理码
+	unsigned int  lAmount;							//域4金额
+	unsigned int  lTraceNo;						//域11流水号
+	unsigned char szDate[5];						//域13受卡方所在日期
+	unsigned char szEntryMode[3];	 				//域22服务点输入方式
+	unsigned char ucPanSeqNo;						//域23卡序列号
+	unsigned char szRefNo[13];						//域37检索参考号
+	unsigned char szSysReferNo[7];				    //域38	授权标识码
+	unsigned char szRecvField55Iccdata[128];  	//脚本55域
+	unsigned int  iRecvIccdataLen; 				//脚本长度
+	unsigned int  lNowBatchNum;					//批次号
+	unsigned int  lOldTraceNo;					    //旧交易流水号
+	
+}SCRIPT;
+
+//用于保存IC卡失败/脱机 交易记录的结构体 电子现金
+typedef struct
+{
+	unsigned char ProType;					    //标志状态(0x01表示没有被撤销或退货款,0x02撤销,0x03已上送)
+	unsigned char bSendNum;					 //已上送次数
+	unsigned char TrackPAN[21];				//域2	主帐号
+	unsigned char CardValid[5];				//域14	卡有效期
+	unsigned char szEntryMode[3];				//域22	服务点输入方式
+	
+	TrsansStruct stTrans;
+
+}IccLogFile;
+
+typedef struct _File_Parm
+{				 
+	unsigned char FileName[32];	//文件名
+	unsigned int FileAddr;		//文件存放地址
+	unsigned int FileLen;		//文件大小
+	unsigned int BlockSize;		//块大小
+	unsigned int BlockSum;		//块个数
+	unsigned int FileCrc32;		//文件CRC32校验值
+	unsigned int TargetAddr;	//目标地址	
+}File_Parm;
+
+typedef struct _SWEEPCODE
+{
+	unsigned char payMode;				//=1支付宝 =2微信 =3银联
+	unsigned char tradeType;			//交易类型(01:扫码支付(反扫)02:查询(反扫正扫)03:扫码支付(正扫))
+	unsigned char Sale_Type;			//交易状态(1消费成功  2未支付  3失败)	
+	unsigned int  traceNo;				// 流水号
+	unsigned int  iAmount;				// 金额
+	unsigned int  iNowBatchNum;		// 批次号
+	unsigned char szRefNo[13];			//检索参考号
+	unsigned char sweepCodeData[128];	//扫码信息
+	unsigned char transTime[7];		//交易时间
+	unsigned char transDate[7];		//交易日期
+	unsigned char sweepCodePayway[16];//扫码梁道
+	unsigned char transOrderNum[33];	//梁道订单号	
+}SWEEPCODE;
+
+#endif
+f

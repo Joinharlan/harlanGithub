@@ -1,0 +1,209 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;/******************************************************
+                       **************************
+    2 00000000         ;* Copyright (c) 2012, Beijing Tongfang Microelectroics 
+                       Co., Ltd.
+    3 00000000         ;* All rights reserved.
+    4 00000000         ;* Module: startup
+    5 00000000         ;* Author: Yang Song
+    6 00000000         ;* Version: V1.0
+    7 00000000         ;* History:
+    8 00000000         ;*   2012-09-24 Original version
+    9 00000000         ;*******************************************************
+                       *************************/
+   10 00000000         ; <h> Stack Configuration
+   11 00000000         ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   12 00000000         ; </h>
+   13 00000000         
+   14 00000000 00007400 
+                       Stack_Size
+                               EQU              0x00007400  ;0x00005600;
+   15 00000000         
+   16 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+=3
+   17 00000000         Stack_Mem
+                               SPACE            Stack_Size
+   18 00007400         __initial_sp
+   19 00007400         
+   20 00007400 2000FC00 
+                       __initial_spTop
+                               EQU              0x2000FC00
+   21 00007400         ; <h> Heap Configuration
+   22 00007400         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   23 00007400         ; </h>
+   24 00007400                 PRESERVE8
+   25 00007400                 THUMB
+   26 00007400         
+   27 00007400                 AREA             STARTUP,CODE,READONLY
+   28 00000000         
+   29 00000000                 IMPORT           main
+   30 00000000                 IMPORT           App_Msg
+   31 00000000                 IMPORT           V32P_StartUp
+   32 00000000                 EXPORT           __first_table
+   33 00000000         
+   34 00000000         ; ENTRY
+   35 00000000         __first_table
+   36 00000000         ;DCD    main
+   37 00000000 00000000        DCD              V32P_StartUp
+   38 00000004 00000000        DCD              App_Msg
+   39 00000008 00000000        DCD              0
+   40 0000000C         
+   41 0000000C         
+   42 0000000C                 AREA             CODE,READONLY
+   43 00000000         
+   44 00000000                 EXPORT           __entry_table
+   45 00000000         __entry_table
+   46 00000000 00000000        DCD              main
+   47 00000004         
+   48 00000004                 EXPORT           __initial_sp
+   49 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+ork --depend=..\obj\startup_mps_cm0.d -o..\obj\startup_mps_cm0.o -IE:\POS工程文
+档\POS工程_THM3100\POS工程_THM3100\debug_Tms20190927\debug_Tms\debug\make\RTE -
+IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0 -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v
+5\ARM\PACK\ARM\CMSIS\4.5.0\Device\ARM\ARMCM0\Include --predefine="__MICROLIB SE
+TA 1" --predefine="__UVISION_VERSION SETA 514" --predefine="ARMCM0 SETA 1" --li
+st=..\list\startup_mps_cm0.lst ..\src\App\src\startup_MPS_CM0.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 16 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem 00000000
+
+Symbol: Stack_Mem
+   Definitions
+      At line 17 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      None
+Comment: Stack_Mem unused
+__initial_sp 00007400
+
+Symbol: __initial_sp
+   Definitions
+      At line 18 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      At line 48 in file ..\src\App\src\startup_MPS_CM0.s
+Comment: __initial_sp used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STARTUP 00000000
+
+Symbol: STARTUP
+   Definitions
+      At line 27 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      None
+Comment: STARTUP unused
+__first_table 00000000
+
+Symbol: __first_table
+   Definitions
+      At line 35 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      At line 32 in file ..\src\App\src\startup_MPS_CM0.s
+Comment: __first_table used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+CODE 00000000
+
+Symbol: CODE
+   Definitions
+      At line 42 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      None
+Comment: CODE unused
+__entry_table 00000000
+
+Symbol: __entry_table
+   Definitions
+      At line 45 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      At line 44 in file ..\src\App\src\startup_MPS_CM0.s
+Comment: __entry_table used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+Stack_Size 00007400
+
+Symbol: Stack_Size
+   Definitions
+      At line 14 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      At line 17 in file ..\src\App\src\startup_MPS_CM0.s
+Comment: Stack_Size used once
+__initial_spTop 2000FC00
+
+Symbol: __initial_spTop
+   Definitions
+      At line 20 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      None
+Comment: __initial_spTop unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+App_Msg 00000000
+
+Symbol: App_Msg
+   Definitions
+      At line 30 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      At line 38 in file ..\src\App\src\startup_MPS_CM0.s
+Comment: App_Msg used once
+V32P_StartUp 00000000
+
+Symbol: V32P_StartUp
+   Definitions
+      At line 31 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      At line 37 in file ..\src\App\src\startup_MPS_CM0.s
+Comment: V32P_StartUp used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 29 in file ..\src\App\src\startup_MPS_CM0.s
+   Uses
+      At line 46 in file ..\src\App\src\startup_MPS_CM0.s
+Comment: main used once
+3 symbols
+345 symbols in table

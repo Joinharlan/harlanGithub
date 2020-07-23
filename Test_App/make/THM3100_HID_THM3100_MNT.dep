@@ -1,0 +1,667 @@
+Dependencies for Project 'THM3100_HID', Target 'THM3100_MNT': (DO NOT MODIFY !)
+F (..\src\App\src\main.c)(0x5DAFAF77)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\App\src\startup_MPS_CM0.s)(0x5C6FC1B7)(--cpu Cortex-M0 --li -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include--list ..\list\startup_mps_cm0.lst --xref -o ..\obj\startup_mps_cm0.o --depend ..\obj\startup_mps_cm0.d)
+F (..\src\App\src\EMVAidCapk.c)(0x5C6FC1B7)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\emvaidcapk.o --omf_browse ..\obj\emvaidcapk.crf --depend ..\obj\emvaidcapk.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+F (..\src\App\src\globalvar.c)(0x5C6FC1B7)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\globalvar.o --omf_browse ..\obj\globalvar.crf --depend ..\obj\globalvar.d)
+F (..\src\Protocol\src\EmvRsa.c)(0x5C6FC1B6)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\emvrsa.o --omf_browse ..\obj\emvrsa.crf --depend ..\obj\emvrsa.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\Protocol\inc\EmvRsa.h)(0x5C6FC1B7)
+F (..\src\Protocol\src\P8583_Assist.c)(0x5D907BDA)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\p8583_assist.o --omf_browse ..\obj\p8583_assist.crf --depend ..\obj\p8583_assist.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\Protocol\src\P8583_Error.c)(0x5D020D89)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\p8583_error.o --omf_browse ..\obj\p8583_error.crf --depend ..\obj\p8583_error.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+F (..\src\Protocol\src\P8583_Proc.c)(0x5DAFAFB3)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\p8583_proc.o --omf_browse ..\obj\p8583_proc.crf --depend ..\obj\p8583_proc.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+I (..\src\Protocol\inc\P8583_proc.h)(0x5D47F105)
+F (..\src\Protocol\src\P8583_Trade.c)(0x5D902385)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\p8583_trade.o --omf_browse ..\obj\p8583_trade.crf --depend ..\obj\p8583_trade.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\Protocol\src\TradeAssistFun.c)(0x5D907D41)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\tradeassistfun.o --omf_browse ..\obj\tradeassistfun.crf --depend ..\obj\tradeassistfun.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\ProtocolAssis\src\ICCardAppFun.c)(0x5C6FC1B7)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\iccardappfun.o --omf_browse ..\obj\iccardappfun.crf --depend ..\obj\iccardappfun.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\ProtocolAssis\src\LoginFun.c)(0x5D8DBC31)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\loginfun.o --omf_browse ..\obj\loginfun.crf --depend ..\obj\loginfun.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\ProtocolAssis\src\menu.c)(0x5D8DCCC8)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\menu.o --omf_browse ..\obj\menu.crf --depend ..\obj\menu.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\LIB\emvcore.lib)(0x5C6FC1B7)()
+F (..\src\LIB\dll.lib)(0x5CD0DB19)()
+F (..\src\EmvKernel\src\emvfile.c)(0x5C6FC1B7)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\emvfile.o --omf_browse ..\obj\emvfile.crf --depend ..\obj\emvfile.d)
+I (..\src\EmvKernel\inc\emvlib_var.h)(0x5CC00A23)
+I (..\src\EmvKernel\inc\emvlib_misc.h)(0x5C6FC1B7)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x53463A44)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\scc-support.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\keymap.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\port.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emviccomm.h)(0x5C6FC1B7)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+F (..\src\EmvKernel\src\emvif.c)(0x5CF516C1)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\emvif.o --omf_browse ..\obj\emvif.crf --depend ..\obj\emvif.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\EmvKernel\src\emvinsertcard.c)(0x5CDD583E)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\emvinsertcard.o --omf_browse ..\obj\emvinsertcard.crf --depend ..\obj\emvinsertcard.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\EmvKernel\src\emvport.c)(0x5CF51307)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\emvport.o --omf_browse ..\obj\emvport.crf --depend ..\obj\emvport.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\EmvKernel\src\emvproc.c)(0x5D4A689B)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\emvproc.o --omf_browse ..\obj\emvproc.crf --depend ..\obj\emvproc.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\EmvKernel\src\emvvar.c)(0x5C6FC1B7)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\emvvar.o --omf_browse ..\obj\emvvar.crf --depend ..\obj\emvvar.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\API\src\AppApi.c)(0x5D8889B8)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\appapi.o --omf_browse ..\obj\appapi.crf --depend ..\obj\appapi.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+I (..\src\API\inc\Picture.h)(0x5CBEC509)
+I (..\src\API\inc\weixin.h)(0x5C6FC1B6)
+I (..\src\API\inc\zhifubao.h)(0x5C6FC1B6)
+F (..\src\API\src\dev_math.c)(0x5C6FC1B6)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\dev_math.o --omf_browse ..\obj\dev_math.crf --depend ..\obj\dev_math.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\API\src\flash_oper.c)(0x5D896657)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\flash_oper.o --omf_browse ..\obj\flash_oper.crf --depend ..\obj\flash_oper.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\API\src\var.c)(0x5D67816B)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\var.o --omf_browse ..\obj\var.crf --depend ..\obj\var.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\qpboc\src\qpbocport.c)(0x5C6FC1B7)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\qpbocport.o --omf_browse ..\obj\qpbocport.crf --depend ..\obj\qpbocport.d)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\EmvKernel\inc\scc-support.h)(0x5C6FC1B7)
+F (..\src\qpboc\src\qpbocTran.c)(0x5D390DB7)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\qpboctran.o --omf_browse ..\obj\qpboctran.crf --depend ..\obj\qpboctran.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\qpboc\inc\contactless_common.h)(0x5C6FC1B7)
+I (..\src\qpboc\inc\entrycore.h)(0x5C6FC1B7)
+I (..\src\qpboc\inc\qpboccore.h)(0x5C6FC1B7)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+F (..\src\test_app\ic_test_app.c)(0x5CF51309)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\ic_test_app.o --omf_browse ..\obj\ic_test_app.crf --depend ..\obj\ic_test_app.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\test_app\uart_test_app.c)(0x5C6FC1B8)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\uart_test_app.o --omf_browse ..\obj\uart_test_app.crf --depend ..\obj\uart_test_app.d)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+F (..\src\test_app\U8_UNICODE.c)(0x5C6FC1B8)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\u8_unicode.o --omf_browse ..\obj\u8_unicode.crf --depend ..\obj\u8_unicode.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\src\test_app\U8_UNICODE.h)(0x5C6FC1B8)
+F (..\src\TMS\src\md5.c)(0x56AC73B8)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\md5.o --omf_browse ..\obj\md5.crf --depend ..\obj\md5.d)
+F (..\src\TMS\src\TMS.c)(0x5D8DB04F)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\tms.o --omf_browse ..\obj\tms.crf --depend ..\obj\tms.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\src\TMS\inc\TMS.h)(0x5D846D91)
+I (..\src\LIB\inc\losapi.h)(0x5D662DB0)
+I (..\src\API\inc\var.h)(0x5D678150)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x53463A44)
+I (..\src\Protocol\inc\TradeAssistFun.h)(0x5CC05B52)
+I (..\src\ProtocolAssis\inc\ProtocolDef.h)(0x5DAFAF80)
+I (..\src\Protocol\inc\P8583_Assist.h)(0x5D77565C)
+I (..\src\Protocol\inc\Struct.h)(0x5D678BF8)
+I (..\src\Protocol\inc\P8583_Error.h)(0x5D020DAE)
+I (..\src\Protocol\inc\P8583_trade.h)(0x5C6FC1B7)
+I (..\src\ProtocolAssis\inc\LoginFun.h)(0x5D85ED1F)
+I (..\src\ProtocolAssis\inc\menu.h)(0x5D25E7F5)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\API\inc\AppApi.h)(0x5CC5685F)
+I (..\src\EmvKernel\inc\emvvar.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvcore.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvif.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvmisc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\emvport.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvproc.h)(0x5C6FC1B7)
+I (..\src\EmvKernel\inc\Emvinsertcard.h)(0x5C6FC1B7)
+I (..\src\API\inc\flash_oper.h)(0x5D896605)
+I (..\src\EmvKernel\inc\rsaapp.h)(0x5C6FC1B7)
+I (..\src\test_app\menu_test.h)(0x5C6FC1B8)
+I (..\src\API\inc\dev_math.h)(0x5C6FC1B6)
+I (..\src\TMS\inc\SHA4.h)(0x5D847D0A)
+F (..\src\TMS\src\SHA4.c)(0x5CDE8514)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -W -O1 --apcs=interwork --split_sections -I..\src\API\inc -I..\src\API\src -I..\src\App\inc -I..\src\App\src -I..\src\EmvKernel\inc -I..\src\EmvKernel\src -I..\src\LIB\inc -I..\src\polarssl-1.0.0\app\inc -I..\src\polarssl-1.0.0\app\src -I..\src\polarssl-1.0.0\include\polarssl -I..\src\polarssl-1.0.0\library -I..\src\Protocol\inc -I..\src\Protocol\src -I..\src\ProtocolAssis\inc -I..\src\ProtocolAssis\src -I..\src\qpboc\inc -I..\src\qpboc\src -I..\src\test_app -I..\src\TMS\inc -I..\src\TMS\src --wchar32-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\Device\ARM\ARMCM0\Include-D__CHECK_DEVICE_DEFINES -DHID="1" -DLINUX-o ..\obj\sha4.o --omf_browse ..\obj\sha4.crf --depend ..\obj\sha4.d)
+I (..\src\App\inc\Glbvar.h)(0x5C6FC1B7)
+I (..\src\TMS\inc\SHA4.h)(0x5D847D0A)

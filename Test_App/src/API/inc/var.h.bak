@@ -1,0 +1,52 @@
+#ifndef _VAR_H_
+#define _VAR_H_
+
+#include <string.h>
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "TradeAssistFun.h"
+
+//#include "P8583_proc.h"
+#include "P8583_Assist.h"
+#include "P8583_Error.h"
+#include "P8583_trade.h"
+         
+#include "LoginFun.h"
+#include "menu.h"
+#include "ProtocolDef.h"
+
+#include "losapi.h"
+#include "Glbvar.h"
+#include "AppApi.h"
+
+#include "emvvar.h"
+
+#include "Emvproc.h"
+#include "Emvinsertcard.h"
+
+#include "flash_oper.h"
+#include "rsaapp.h"
+
+#include "menu_test.h"
+
+#include "dev_math.h"
+#if ProtocolType==77
+#include "Kemapi.h"
+#endif
+
+//#include "ic_test_app.h"
+//#include "pinyin.h"
+//#include "InputMode.h"
+//#include "Picture.h"
+
+extern unsigned char OperLoginFun;				//操作员签到状态
+extern unsigned char POSLoginFun;				//操作员签到状态
+
+extern void Lib_MmiDisplay(u8 wmode,u8 wx,u8 wy,u8 cmode,u16 cx,u16 cy,u16 color,u8 *str);
+uchar menumodle(u8 _REVER,u8 num,u8 _CENTER2,u8 _CENTER3,u8 _CENTER4,u8 _CENTER5,u8 _CENTER6,u8 *menu1,u8 *menu2,u8 *menu3,u8 *menu4,u8 *menu5,u8 *menu6);
+
+#endif
+
+
