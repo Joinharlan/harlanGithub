@@ -12,3 +12,9 @@ int main(void)
 //测试分支冲突master01
 //测试分支冲突02debug
 //debug01增加内容
+void testfun(void)
+{
+   printf("test file\n");
+
+   printf("修复完成\n");
+}
